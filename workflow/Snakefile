@@ -1,0 +1,501 @@
+import pandas as pd
+avg_lengths = pd.read_csv("metadata/avg_read_length.csv", index_col=0).squeeze("columns")
+UNIQUE_LENGTHS = avg_lengths.unique().tolist()
+
+(FASTQ_SAMPLES,) = glob_wildcards("samples/{sample}.fastq")
+(FASTA_SAMPLES,) = glob_wildcards("samples/{sample}.fasta")
+ALL_SAMPLES = list(set(FASTQ_SAMPLES + FASTA_SAMPLES))
+
+CORES = workflow.cores if workflow.cores else 1
+
+THREADS_10 = max(1, int(CORES * 0.1))
+THREADS_20 = max(1, int(CORES * 0.2))
+THREADS_50  = max(1, int(CORES * 0.5))
+THREADS_80  = max(1, int(CORES * 0.8))
+THREADS_100 = max(1, CORES)
+
+
+rule all:
+    input:
+        "database/last/db/CARD-db.prj",
+        "database/last/db/IS-db.prj",
+        "database/last/db/Tn3-db.prj",
+        "database/last/db/Tn7-db.prj",
+        "database/last/db/Tn554-db.prj",
+        "database/last/db/integron-db.prj",
+        "database/last/db/plasmid-db.prj",
+        expand("results/last/train/{sample}_CARD.train", sample=ALL_SAMPLES),
+        expand("results/last/train/{sample}_IS.train", sample=ALL_SAMPLES),
+        expand("results/last/train/{sample}_Tn3.train", sample=ALL_SAMPLES),
+        expand("results/last/train/{sample}_Tn7.train", sample=ALL_SAMPLES),
+        expand("results/last/train/{sample}_Tn554.train", sample=ALL_SAMPLES),
+        expand("results/last/train/{sample}_integron.train", sample=ALL_SAMPLES),
+        expand("results/maf/{sample}_CARD.maf", sample=ALL_SAMPLES),
+        expand("results/maf/{sample}_IS.maf", sample=ALL_SAMPLES),
+        expand("results/maf/{sample}_Tn3.maf", sample=ALL_SAMPLES),
+        expand("results/maf/{sample}_Tn7.maf", sample=ALL_SAMPLES),
+        expand("results/maf/{sample}_Tn554.maf", sample=ALL_SAMPLES),
+        expand("results/maf/{sample}_integron.maf", sample=ALL_SAMPLES),
+        expand("results/arg_summary/{sample}_CARD_summary.csv", sample=ALL_SAMPLES),
+        expand("results/arg_extracted/{sample}_CARD_last.fasta", sample=ALL_SAMPLES),
+        expand("results/arg_headers/{sample}_ARG.txt", sample=ALL_SAMPLES),
+        expand("results/plasmid_extracted/{sample}_plasmid.fasta", sample=ALL_SAMPLES),
+        expand("results/maf/{sample}_plasmid.maf", sample=ALL_SAMPLES),
+        expand("results/kraken/{sample}_taxonomy.tab", sample=ALL_SAMPLES),
+        expand("results/kraken/{sample}_taxonomy.txt", sample=ALL_SAMPLES),
+        expand("database/kraken2/gtdb_kraken2/database{avg_len}mers.kmer_distrib", avg_len=UNIQUE_LENGTHS),
+        expand("results/kraken/{sample}_genus.bracken", sample=ALL_SAMPLES),
+        expand("results/kraken/{sample}_phylum.bracken", sample=ALL_SAMPLES),
+        expand("results/is_summary/{sample}_IS_summary.csv", sample=ALL_SAMPLES),
+        expand("results/arg_is_merged/{sample}_ARG_IS_summary.csv", sample=ALL_SAMPLES),
+        expand("results/all_summary/{sample}_all_summary.csv", sample=ALL_SAMPLES),
+        expand("results/final_summary/{sample}_final_summary.csv", sample=ALL_SAMPLES)
+
+
+rule fastq_to_fasta:
+    input: "samples/{sample}.fastq"
+    conda: "envs/seqtk.yaml"
+    output: "converted/{sample}.fasta"
+    threads: THREADS_10
+    shell: "seqtk seq -a {input} > {output}"
+
+# Build DBs for LAST
+rule build_arg_db:
+    input: "database/card_protein_homolog_model.fasta"
+    conda: "envs/LAST.yaml"
+    output: "database/last/db/CARD-db.prj"
+    threads: THREADS_50
+    shell: "lastdb -q -c database/last/db/CARD-db {input}"
+
+rule build_is_db:
+    input: "database/ISFinder.fasta"
+    conda: "envs/LAST.yaml"
+    output: "database/last/db/IS-db.prj"
+    threads: THREADS_50
+    shell: "lastdb -q -c database/last/db/IS-db {input}"
+
+rule build_tn3_db:
+    input: "database/Tn3.fasta"
+    conda: "envs/LAST.yaml"
+    output: "database/last/db/Tn3-db.prj"
+    threads: THREADS_50
+    shell: "lastdb -q -c database/last/db/Tn3-db {input}"
+
+rule build_tn7_db:
+    input: "database/Tn7.fasta"
+    conda: "envs/LAST.yaml"
+    output: "database/last/db/Tn7-db.prj"
+    threads: THREADS_50
+    shell: "lastdb -q -c database/last/db/Tn7-db {input}"  
+
+rule build_tn554_db:
+    input: "database/Tn554.fasta"
+    conda: "envs/LAST.yaml"
+    output: "database/last/db/Tn554-db.prj"
+    threads: THREADS_50
+    shell: "lastdb -q -c database/last/db/Tn554-db {input}"
+    
+
+rule build_integron_db:
+    input: "database/integron.fasta"
+    conda: "envs/LAST.yaml"
+    output: "database/last/db/integron-db.prj"
+    threads: THREADS_50
+    shell: "lastdb -q -c database/last/db/integron-db {input}"
+
+
+rule build_plasmid_db:
+    input: "database/plasmid.fasta"
+    conda: "envs/LAST.yaml"
+    output: "database/last/db/plasmid-db.prj"
+    threads: THREADS_50
+    shell: "lastdb -q -c database/last/db/plasmid-db {input}"
+
+# TRAIN STEP FOR ARG
+rule train_arg:
+    input:
+        samples = lambda wc: f"samples/{wc.sample}.fasta" if wc.sample in FASTA_SAMPLES else f"converted/{wc.sample}.fasta",
+    conda: "envs/LAST.yaml"
+    log: "logs/train_arg/{sample}.log"
+    output: "results/last/train/{sample}_CARD.train"
+    params:
+        db = "database/last/db/CARD-db"
+    threads: THREADS_50
+    shell: "last-train -P{threads} --codon {params.db} {input.samples} > {output} 2> {log}"
+# ALIGN STEP FOR ARG
+rule align_arg:
+    input:
+        samples = lambda wc: f"samples/{wc.sample}.fasta" if wc.sample in FASTA_SAMPLES else f"converted/{wc.sample}.fasta",
+        train = "results/last/train/{sample}_CARD.train"
+    conda: "envs/LAST.yaml"
+    log: "logs/align_arg/{sample}.log"
+    params:
+        db = "database/last/db/CARD-db"
+    threads: THREADS_50
+    output: "results/maf/{sample}_CARD.maf"
+    shell: "lastal -p {input.train} -m10 -D1e6 -K1 -P{threads} {params.db} {input.samples} > {output} 2> {log}"
+
+rule process_arg:
+    input: 
+        samples = lambda wc: f"samples/{wc.sample}.fasta" if wc.sample in FASTA_SAMPLES else f"converted/{wc.sample}.fasta",
+        alignment = "results/maf/{sample}_CARD.maf",
+        metadata = ancient("metadata/aro_index.tsv")
+    conda: "envs/process.yaml"
+    threads: THREADS_50
+    log: "logs/arg_processing/{sample}.log"
+    output: 
+        summary = "results/arg_summary/{sample}_CARD_summary.csv",
+        extracted = "results/arg_extracted/{sample}_CARD_last.fasta"
+    shell: "python scripts/ARG_parse.py --input {input.samples} --maf {input.alignment} --metadata {input.metadata} --summary {output.summary} --output {output.extracted} > {log} 2>&1" 
+
+# EXTRACT HEADERS FROM ARG FASTA FILE
+rule extract_arg_headers:
+    input: "results/arg_extracted/{sample}_CARD_last.fasta"
+    output: "results/arg_headers/{sample}_ARG.txt"
+    conda: "envs/process.yaml"
+    threads: 1
+    shell: "grep '^>' {input} | sed 's/^>//' > {output}"
+
+
+# TRAIN and ALIGN STEP FOR IS
+rule train_is:
+    input:
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+    conda: "envs/LAST.yaml"
+    log: "logs/train_is/{sample}.log"
+    params:
+        db = "database/last/db/IS-db"
+    threads: THREADS_20
+    output: "results/last/train/{sample}_IS.train"
+    shell: "last-train -P{threads} --codon {params.db} {input.extracted_samples} > {output} 2> {log}"
+
+rule align_is:
+    input: 
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+        train = "results/last/train/{sample}_IS.train"
+    conda: "envs/LAST.yaml"
+    log: "logs/align_is/{sample}.log"
+    params:
+        db = "database/last/db/IS-db"
+    threads: THREADS_20
+    output: "results/maf/{sample}_IS.maf"
+    shell: "lastal -p {input.train} -m10 -D1e6 -K1 -P{threads} {params.db} {input.extracted_samples} > {output} 2> {log}"
+
+# TRAIN and ALIGN STEP FOR Tn3
+rule train_tn3:
+    input:
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+    conda: "envs/LAST.yaml"
+    threads: THREADS_20
+    log: "logs/train_tn3/{sample}.log"
+    params:
+        db = "database/last/db/Tn3-db"
+    output: "results/last/train/{sample}_Tn3.train"
+    shell: 
+        """
+        if [ -s {input.extracted_samples} ]; then
+            last-train -P{threads} --codon {params.db} {input.extracted_samples} > {output} 2> {log} || touch {output}
+        else
+            touch {output}
+        fi
+        """
+
+rule align_tn3:
+    input: 
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+        train = "results/last/train/{sample}_Tn3.train"
+    conda: "envs/LAST.yaml"
+    threads: THREADS_20
+    log: "logs/align_tn3/{sample}.log"
+    params:
+        db = "database/last/db/Tn3-db"
+    output: "results/maf/{sample}_Tn3.maf"
+    shell: 
+        """
+        if [ -s {input.train} ]; then
+            lastal -p {input.train} -m10 -D1e6 -K1 -P{threads} {params.db} {input.extracted_samples} > {output} 2> {log} || touch {output}
+        else
+            touch {output}
+        fi
+        """
+
+# TRAIN and ALIGN STEP FOR Tn7
+rule train_tn7:
+    input:
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+    conda: "envs/LAST.yaml"
+    log: "logs/train_tn7/{sample}.log"
+    params:
+        db = "database/last/db/Tn7-db"
+    threads: THREADS_20
+    output: "results/last/train/{sample}_Tn7.train"
+    shell:
+        """
+        if [ -s "{input.extracted_samples}" ]; then
+            last-train -P{threads} --codon {params.db} {input.extracted_samples} > {output} 2> {log} || touch {output}
+        else
+            touch {output}
+        fi
+        """
+
+rule align_tn7:
+    input: 
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+        train = "results/last/train/{sample}_Tn7.train"
+    conda: "envs/LAST.yaml"
+    threads: THREADS_20
+    log: "logs/align_tn7/{sample}.log"
+    params:
+        db = "database/last/db/Tn7-db"
+    output: "results/maf/{sample}_Tn7.maf"
+    shell: 
+        """
+        if [ -s {input.train} ]; then
+            lastal -p {input.train} -m10 -D1e6 -K1 -P{threads} {params.db} {input.extracted_samples} > {output} 2> {log} || touch {output}
+        else
+            touch {output}
+        fi
+        """
+
+# TRAIN and ALIGN STEP FOR Tn554
+rule train_tn554:
+    input:
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+    conda: "envs/LAST.yaml"
+    threads: THREADS_20
+    log: "logs/train_tn554/{sample}.log"
+    params:
+        db = "database/last/db/Tn554-db"
+    output: "results/last/train/{sample}_Tn554.train"
+    shell: 
+        """
+        if [ -s {input.extracted_samples} ]; then
+            last-train -P{threads} --codon {params.db} {input.extracted_samples} > {output} 2> {log} || touch {output}
+        else
+            touch {output}
+        fi
+        """
+
+rule align_tn554:
+    input:
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+        train = "results/last/train/{sample}_Tn554.train"
+    conda: "envs/LAST.yaml"
+    threads: THREADS_20
+    log: "logs/align_tn554/{sample}.log"
+    params:
+        db = "database/last/db/Tn554-db"
+    output: "results/maf/{sample}_Tn554.maf"
+    shell: 
+        """
+        if [ -s {input.train} ]; then
+            lastal -p {input.train} -m10 -D1e6 -K1 -P{threads} {params.db} {input.extracted_samples} > {output} 2> {log} || touch {output}
+        else
+            touch {output}
+        fi
+        """
+
+# TRAIN and ALIGN STEP FOR INTEGRON
+rule train_integron:
+    input:
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+    conda: "envs/LAST.yaml"
+    threads: THREADS_20
+    log: "logs/train_integron/{sample}.log"
+    params:
+        db = "database/last/db/integron-db"
+    output: "results/last/train/{sample}_integron.train"
+    shell: "last-train -P{threads} --codon {params.db} {input.extracted_samples} > {output} 2> {log}"
+
+rule align_integron:
+    input:
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+        train = "results/last/train/{sample}_integron.train"
+    conda: "envs/LAST.yaml"
+    threads: THREADS_20
+    log: "logs/align_integron/{sample}.log"
+    params:
+        db = "database/last/db/integron-db"
+    output: "results/maf/{sample}_integron.maf"
+    shell: 
+        """
+        if [ -s {input.train} ]; then
+            lastal -p {input.train} -m10 -D1e6 -K1 -P{threads} {params.db} {input.extracted_samples} > {output} 2> {log}
+        else
+            touch {output}
+        fi
+        """
+
+# Extract full reads for plasmid
+rule extract_full_reads_plasmid:
+    input:
+        samples = lambda wc: f"samples/{wc.sample}.fasta" if wc.sample in FASTA_SAMPLES else f"converted/{wc.sample}.fasta",
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta"
+    output:
+        "results/plasmid_extracted/{sample}_plasmid.fasta"
+    log: "logs/plasmid_extracted/{sample}.log"
+    threads: THREADS_10
+    conda: "envs/seqkit.yaml"
+    shell:
+        '''
+        seqkit grep -f <(grep "^>" {input.extracted_samples} \
+            | sed 's/>//' \
+            | awk '{{print $1}}' \
+            | sed 's/_part[0-9]*//' \
+            | sort -u) \
+            {input.samples} > {output} 2> {log}
+        '''
+
+# Alignment for plasmid
+rule align_plasmid:
+    input: 
+        plasmid_extracted = "results/plasmid_extracted/{sample}_plasmid.fasta",
+    conda: "envs/LAST.yaml"
+    threads: THREADS_100
+    params:
+        db = "database/last/db/plasmid-db"
+    log: "logs/align_plasmid/{sample}.log"
+    output: "results/maf/{sample}_plasmid.maf"
+    shell: "lastal -m10 -D1e6 -K1 -P{threads} {params.db} {input.plasmid_extracted} > {output} 2> {log}"
+
+# Kraken Classification of reads
+
+rule classify_kraken:
+    input:
+        plasmid_extracted = "results/plasmid_extracted/{sample}_plasmid.fasta",
+        db = ancient("database/kraken2/gtdb_kraken2")
+    conda: "envs/kraken2.yaml"
+    log: "logs/kraken/{sample}.log"
+    threads: THREADS_100
+    output:
+        tab = "results/kraken/{sample}_taxonomy.tab",
+        report = "results/kraken/{sample}_taxonomy.txt"
+    threads: 20
+    shell:
+        "k2 classify --use-names --memory-mapping --threads {threads} --db {input.db} {input.plasmid_extracted} --output {output.tab} --report {output.report} > {log} 2>&1"
+# TO DO: ADD RULES FOR BRACKEN
+rule build_bracken_db:
+    input: 
+        db = ancient("database/kraken2/gtdb_kraken2")
+    params:
+        kmer = 26
+    threads: THREADS_100
+    conda: "envs/bracken.yaml"
+    output: 
+        distrib = "database/kraken2/gtdb_kraken2/database{avg_len}mers.kmer_distrib"
+    shell:
+        "bracken-build -d {input.db} -k {params.kmer} -t {threads} -l {wildcards.avg_len}"
+
+rule bracken_classify_genus:
+    input:
+        kraken_report = "results/kraken/{sample}_taxonomy.txt",
+        db = ancient("database/kraken2/gtdb_kraken2")
+    params:
+        avg_len = lambda wildcards: avg_lengths[wildcards.sample]
+    threads: THREADS_100
+    conda: "envs/bracken.yaml"
+    log: "logs/bracken_genus/{sample}.log"
+    output: "results/kraken/{sample}_genus.bracken"
+    shell:
+        "bracken -d {input.db} -i {input.kraken_report} -o {output} -r {params.avg_len} -l G -t {threads} > {log} 2>&1"
+rule bracken_classify_phylum:
+    input:
+        kraken_report = "results/kraken/{sample}_taxonomy.txt",
+        db = ancient("database/kraken2/gtdb_kraken2")
+    params:
+        avg_len = lambda wildcards: avg_lengths[wildcards.sample]
+    threads: THREADS_100
+    conda: "envs/bracken.yaml"
+    log: "logs/bracken_phylum/{sample}.log"
+    output: "results/kraken/{sample}_phylum.bracken"
+    shell:
+        "bracken -d {input.db} -i {input.kraken_report} -o {output} -r {params.avg_len} -l P -t {threads} > {log} 2>&1"
+
+
+# Parsing Scripts
+
+# IS
+rule process_is:
+    input: 
+        extracted_samples = "results/arg_extracted/{sample}_CARD_last.fasta",
+        alignment = "results/maf/{sample}_IS.maf",
+        metadata = ancient("metadata/ISFinder_metadata.txt"),
+        arg_summary = "results/arg_summary/{sample}_CARD_summary.csv",
+        fasta_headers = "results/arg_headers/{sample}_ARG.txt"
+    conda: "envs/process.yaml"
+    threads: THREADS_50
+    log: "logs/is_processing/{sample}.log"
+    output: 
+        summary = "results/is_summary/{sample}_IS_summary.csv",
+        merged = "results/arg_is_merged/{sample}_ARG_IS_summary.csv"
+    shell: "python scripts/IS_parse.py --input {input.alignment} --fasta_headers {input.fasta_headers} --IS_metadata {input.metadata} --arg {input.arg_summary} --output {output.summary} --merged_output {output.merged} > {log} 2>&1"
+
+# TN_INT
+rule process_tn_int:
+    input: 
+        tn3_alignment = "results/maf/{sample}_Tn3.maf",
+        tn554_alignment = "results/maf/{sample}_Tn554.maf",
+        tn7_alignment = "results/maf/{sample}_Tn7.maf",
+        integron_alignment = "results/maf/{sample}_integron.maf",
+        fasta_headers = "results/arg_headers/{sample}_ARG.txt",
+        integrase_headers = ancient("metadata/integrase_headers.txt"),
+        arg_is = "results/arg_is_merged/{sample}_ARG_IS_summary.csv",
+    conda: "envs/process.yaml"
+    threads: THREADS_50
+    log: "logs/tn_int_processing/{sample}.log"
+    output: 
+        summary = "results/all_summary/{sample}_all_summary.csv",
+    shell:
+        """
+        if [ -s {input.tn3_alignment} ]; then
+            TN3="--input_tn3 {input.tn3_alignment}"
+        else
+            TN3=""
+            echo "WARNING: Tn3 maf is empty, skipping" >> {log}
+        fi
+
+        if [ -s {input.tn7_alignment} ]; then
+            TN7="--input_tn7 {input.tn7_alignment}"
+        else
+            TN7=""
+            echo "WARNING: Tn7 maf is empty, skipping" >> {log}
+        fi
+
+        if [ -s {input.tn554_alignment} ]; then
+            TN554="--input_tn554 {input.tn554_alignment}"
+        else
+            TN554=""
+            echo "WARNING: Tn554 maf is empty, skipping" >> {log}
+        fi
+
+        if [ -s {input.integron_alignment} ]; then
+            INTEGRON="--input_integron {input.integron_alignment}"
+        else
+            INTEGRON=""
+            echo "WARNING: Integron maf is empty, skipping" >> {log}
+        fi
+
+        python scripts/tn_in_parse.py \
+            $TN3 $TN7 $TN554 \
+            $INTEGRON \
+            --fasta_headers {input.fasta_headers} \
+            --integrase_headers {input.integrase_headers} \
+            --arg_is {input.arg_is} \
+            --output {output.summary} >> {log} 2>&1
+        """
+
+# PLASMID_TAXO
+rule process_plasmid_taxo:
+    input:
+        plasmid_alignment = "results/maf/{sample}_plasmid.maf",
+        kraken_report = "results/kraken/{sample}_taxonomy.txt",
+        kraken_reads = "results/kraken/{sample}_taxonomy.tab",
+        typing = ancient("metadata/typing.csv"),
+        finder = ancient("metadata/plasmidfinder.csv"),
+        all_summary = "results/all_summary/{sample}_all_summary.csv",
+    conda: "envs/process.yaml"
+    threads: THREADS_80
+    log: "logs/plasmid_taxo_processing/{sample}.log"
+    output:
+        summary = "results/final_summary/{sample}_final_summary.csv"
+    shell: "python scripts/plasmid_taxo_parse.py --plasmid {input.plasmid_alignment} --tax-report {input.kraken_report} --tax-reads {input.kraken_reads} --typing {input.typing} --finder {input.finder} --summary {input.all_summary} --output {output.summary} > {log} 2>&1"

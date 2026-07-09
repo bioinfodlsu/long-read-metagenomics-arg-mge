@@ -1,0 +1,1014 @@
+>gnl|accession=AB027715|name=Corynebacterium glutamicum|gene=intI1|host=idbi1524
+>gnl|accession=AB061794|name=Escherichia coli|gene=intI1|host=idbi1284
+>gnl|accession=AB070224|name=Serratia marcescens|gene=intI3|host=idbi535
+>gnl|accession=AB104852|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1094
+>gnl|accession=AB107663|name=Vibrio cholerae O1|gene=intI1|host=idbi1285
+>gnl|accession=AB113580|name=Klebsiella pneumoniae|gene=intI1|host=idbi353
+>gnl|accession=AB114632|name=Vibrio fluvialis|gene=intI1|host=idbi1286
+>gnl|accession=AB121039|name=Escherichia coli|gene=intI1|host=idbi983
+>gnl|accession=AB126599|name=Salmonella enterica subsp. enterica serovar Infantis|gene=intI1|host=idbi1287
+>gnl|accession=AB161449|name=Escherichia coli|gene=intI1|host=idbi1112
+>gnl|accession=AB188258|name=Escherichia coli|gene=intI1|host=idbi1114
+>gnl|accession=AB188271|name=Escherichia coli|gene=intI2|host=idbi1298
+>gnl|accession=AB188812|name=Pseudomonas aeruginosa|gene=intI1|host=idbi566
+>gnl|accession=AB200915|name=Vibrio cholerae O1|gene=intI|host=idbi154
+>gnl|accession=AB207867|name=Escherichia coli|gene=intI1|host=idbi1127
+>gnl|accession=AB207867|name=Escherichia coli|gene=groEL/intI1|host=idbi1128
+>gnl|accession=AB257723|name=uncultured bacterium|gene=intI|host=idbi84
+>gnl|accession=AB257724|name=uncultured bacterium|gene=intI|host=idbi83
+>gnl|accession=AB258232|name=uncultured bacterium|gene=intI|host=idbi82
+>gnl|accession=AB258233|name=uncultured bacterium|gene=intI|host=idbi81
+>gnl|accession=AB258234|name=uncultured bacterium|gene=intI|host=idbi80
+>gnl|accession=AB258235|name=uncultured bacterium|gene=intI|host=idbi79
+>gnl|accession=AB258236|name=uncultured bacterium|gene=intI|host=idbi198
+>gnl|accession=AB258237|name=uncultured bacterium|gene=intI|host=idbi77
+>gnl|accession=AB258238|name=uncultured bacterium|gene=intI|host=idbi76
+>gnl|accession=AB258239|name=uncultured bacterium|gene=intI|host=idbi75
+>gnl|accession=AB258240|name=uncultured bacterium|gene=intI|host=idbi74
+>gnl|accession=AB258241|name=uncultured bacterium|gene=intI|host=idbi73
+>gnl|accession=AB258242|name=uncultured bacterium|gene=intI|host=idbi72
+>gnl|accession=AB258243|name=uncultured bacterium|gene=intI|host=idbi71
+>gnl|accession=AB258244|name=uncultured bacterium|gene=intI|host=idbi70
+>gnl|accession=AB258245|name=uncultured bacterium|gene=intI|host=idbi69
+>gnl|accession=AB258246|name=uncultured bacterium|gene=intI|host=idbi68
+>gnl|accession=AB258247|name=uncultured bacterium|gene=intI|host=idbi67
+>gnl|accession=AB258248|name=uncultured bacterium|gene=intI|host=idbi66
+>gnl|accession=AB258249|name=uncultured bacterium|gene=intI|host=idbi65
+>gnl|accession=AB258250|name=uncultured bacterium|gene=intI|host=idbi64
+>gnl|accession=AB258251|name=uncultured bacterium|gene=intI|host=idbi63
+>gnl|accession=AB258252|name=uncultured bacterium|gene=intI|host=idbi62
+>gnl|accession=AB258253|name=uncultured bacterium|gene=intI|host=idbi61
+>gnl|accession=AB258254|name=uncultured bacterium|gene=intI|host=idbi60
+>gnl|accession=AB258255|name=uncultured bacterium|gene=intI|host=idbi59
+>gnl|accession=AB258256|name=uncultured bacterium|gene=intI|host=idbi58
+>gnl|accession=AB258257|name=uncultured bacterium|gene=intI|host=idbi57
+>gnl|accession=AB258258|name=uncultured bacterium|gene=intI|host=idbi56
+>gnl|accession=AB258259|name=uncultured bacterium|gene=intI|host=idbi55
+>gnl|accession=AB258260|name=uncultured bacterium|gene=intI|host=idbi54
+>gnl|accession=AB258261|name=uncultured bacterium|gene=intI|host=idbi53
+>gnl|accession=AB258262|name=uncultured bacterium|gene=intI|host=idbi52
+>gnl|accession=AB258263|name=uncultured bacterium|gene=intI|host=idbi51
+>gnl|accession=AB258264|name=uncultured bacterium|gene=intI|host=idbi50
+>gnl|accession=AB258265|name=uncultured bacterium|gene=intI|host=idbi49
+>gnl|accession=AB258266|name=uncultured bacterium|gene=intI|host=idbi48
+>gnl|accession=AB258267|name=uncultured bacterium|gene=intI|host=idbi47
+>gnl|accession=AB258268|name=uncultured bacterium|gene=intI|host=idbi46
+>gnl|accession=AB258269|name=uncultured bacterium|gene=intI|host=idbi45
+>gnl|accession=AB258270|name=uncultured bacterium|gene=intI|host=idbi44
+>gnl|accession=AB258271|name=uncultured bacterium|gene=intI|host=idbi43
+>gnl|accession=AB258272|name=uncultured bacterium|gene=intI|host=idbi42
+>gnl|accession=AB258273|name=uncultured bacterium|gene=intI|host=idbi41
+>gnl|accession=AB258274|name=uncultured bacterium|gene=intI|host=idbi40
+>gnl|accession=AB258275|name=uncultured bacterium|gene=intI|host=idbi39
+>gnl|accession=AB258276|name=uncultured bacterium|gene=intI|host=idbi38
+>gnl|accession=AB258277|name=uncultured bacterium|gene=intI|host=idbi37
+>gnl|accession=AB258278|name=uncultured bacterium|gene=intI|host=idbi36
+>gnl|accession=AB258279|name=uncultured bacterium|gene=intI|host=idbi35
+>gnl|accession=AB258280|name=uncultured bacterium|gene=intI|host=idbi34
+>gnl|accession=AB258281|name=uncultured bacterium|gene=intI|host=idbi33
+>gnl|accession=AB258282|name=uncultured bacterium|gene=intI|host=idbi32
+>gnl|accession=AB258283|name=uncultured bacterium|gene=intI|host=idbi31
+>gnl|accession=AB258284|name=uncultured bacterium|gene=intI|host=idbi30
+>gnl|accession=AB258285|name=uncultured bacterium|gene=intI|host=idbi29
+>gnl|accession=AB258286|name=uncultured bacterium|gene=intI|host=idbi28
+>gnl|accession=AB258287|name=uncultured bacterium|gene=intI|host=idbi27
+>gnl|accession=AB258288|name=uncultured bacterium|gene=intI|host=idbi26
+>gnl|accession=AB258289|name=uncultured bacterium|gene=intI|host=idbi25
+>gnl|accession=AB258290|name=uncultured bacterium|gene=intI|host=idbi24
+>gnl|accession=AB258291|name=uncultured bacterium|gene=intI|host=idbi23
+>gnl|accession=AB258292|name=uncultured bacterium|gene=intI|host=idbi22
+>gnl|accession=AB258294|name=uncultured bacterium|gene=intI|host=idbi20
+>gnl|accession=AB258295|name=uncultured bacterium|gene=intI|host=idbi19
+>gnl|accession=AB258296|name=uncultured bacterium|gene=intI|host=idbi18
+>gnl|accession=AB258297|name=uncultured bacterium|gene=intI|host=idbi17
+>gnl|accession=AB258298|name=uncultured bacterium|gene=intI|host=idbi16
+>gnl|accession=AB258299|name=uncultured bacterium|gene=intI|host=idbi15
+>gnl|accession=AB258300|name=uncultured bacterium|gene=intI|host=idbi14
+>gnl|accession=AB258301|name=uncultured bacterium|gene=intI|host=idbi13
+>gnl|accession=AB258302|name=uncultured bacterium|gene=intI|host=idbi12
+>gnl|accession=AB258303|name=uncultured bacterium|gene=intI|host=idbi11
+>gnl|accession=AB273726|name=uncultured bacterium|gene=intI|host=idbi10
+>gnl|accession=AB273727|name=uncultured bacterium|gene=intI|host=idbi108
+>gnl|accession=AB281182|name=Pseudomonas aeruginosa|gene=intI1|host=idbi541
+>gnl|accession=AB294211|name=Escherichia coli|gene=intI1|host=idbi1129
+>gnl|accession=AB297447|name=Staphylococcus epidermidis|gene=intI1|host=idbi98
+>gnl|accession=AB355131|name=uncultured bacterium|gene=intI1|host=idbi9
+>gnl|accession=AB355132|name=uncultured bacterium|gene=intI|host=idbi8
+>gnl|accession=AB355133|name=uncultured bacterium|gene=intI|host=idbi7
+>gnl|accession=AB355134|name=uncultured bacterium|gene=intI|host=idbi6
+>gnl|accession=AB355135|name=uncultured bacterium|gene=intI|host=idbi5
+>gnl|accession=AB355136|name=uncultured bacterium|gene=intI|host=idbi4
+>gnl|accession=AB469045|name=Klebsiella oxytoca plasmid pK9AT|gene=intI1|host=idbi1582
+>gnl|accession=AB469046|name=Klebsiella oxytoca|gene=intI1|host=idbi1581
+>gnl|accession=AB485590|name=Vibrio cholerae O1 biovar El tor|gene=intI9|host=idbi2357
+>gnl|accession=AB546978|name=uncultured bacterium|gene=intI|host=idbi2475
+>gnl|accession=AB546979|name=uncultured bacterium|gene=intI|host=idbi2474
+>gnl|accession=AB546981|name=uncultured bacterium|gene=intI|host=idbi2591
+>gnl|accession=AB546982|name=uncultured bacterium|gene=intI|host=idbi2477
+>gnl|accession=AB546983|name=uncultured bacterium|gene=intI|host=idbi2478
+>gnl|accession=AB546984|name=uncultured bacterium|gene=intI|host=idbi2479
+>gnl|accession=AB546985|name=uncultured bacterium|gene=intI|host=idbi2480
+>gnl|accession=AB546986|name=uncultured bacterium|gene=intI|host=idbi2481
+>gnl|accession=AB546987|name=uncultured bacterium|gene=intI|host=idbi2482
+>gnl|accession=AB546988|name=uncultured bacterium|gene=intI|host=idbi2483
+>gnl|accession=AB546989|name=uncultured bacterium|gene=intI|host=idbi2484
+>gnl|accession=AB546990|name=uncultured bacterium|gene=intI|host=idbi2486
+>gnl|accession=AB546991|name=uncultured bacterium|gene=intI|host=idbi2485
+>gnl|accession=AB546992|name=uncultured bacterium|gene=intI|host=idbi2487
+>gnl|accession=AB546994|name=uncultured bacterium|gene=intI|host=idbi2489
+>gnl|accession=AB546995|name=uncultured bacterium|gene=intI|host=idbi2490
+>gnl|accession=AB546996|name=uncultured bacterium|gene=intI|host=idbi2492
+>gnl|accession=AB546997|name=uncultured bacterium|gene=intI|host=idbi2491
+>gnl|accession=AB546998|name=uncultured bacterium|gene=intI|host=idbi2493
+>gnl|accession=AB576781|name=Salmonella enterica subsp. enterica serovar Typhimurium plasmid pYT1|gene=intI1|host=idbi2665
+>gnl|accession=AB587676|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2669
+>gnl|accession=AB733642|name=Escherichia coli |gene=intI|host=idbi2884
+>gnl|accession=AF024602|name=Pseudomonas aeruginosa|gene=intI1|host=idbi921
+>gnl|accession=AF043381|name=Pseudomonas aeruginosa|gene=intI1|host=idbi922
+>gnl|accession=AF055586|name=Vibrio cholerae|gene=intI4|host=idbi472
+>gnl|accession=AF071555|name=Salmonella typhimurium DT104|gene=groEL/intI1|host=idbi934
+>gnl|accession=AF121001|name=Salmonella typhimurium DT104|gene=intI1|host=idbi1054
+>gnl|accession=AF175203|name=Citrobacter freundii|gene=intI1|host=idbi126
+>gnl|accession=AF179592|name=Vibrio cholerae|gene=intI4|host=idbi722
+>gnl|accession=AF179594|name=Vibrio cholerae|gene=intI4|host=idbi717
+>gnl|accession=AF179595|name=Vibrio mimicus|gene=intI5|host=idbi719
+>gnl|accession=AF180939|name=Vibrio mimicus|gene=intIA|host=idbi919
+>gnl|accession=AF202035|name=Enterobacter cloacae|gene=intI1|host=idbi718
+>gnl|accession=AF205943|name=Escherichia coli|gene=intI1|host=idbi426
+>gnl|accession=AF221899|name=Vibrio cholerae|gene=intI1|host=idbi714
+>gnl|accession=AF231133|name=Pseudomonas aeruginosa|gene=intI1|host=idbi912
+>gnl|accession=AF263519|name=Pseudomonas aeruginosa|gene=intI1|host=idbi707
+>gnl|accession=AF284063|name=Serratia marcescens|gene=intI1|host=idbi125
+>gnl|accession=AF288045|name=Citrobacter youngae|gene=intI1|host=idbi1744
+>gnl|accession=AF294653|name=Pseudomonas aeruginosa|gene=intI1|host=idbi706
+>gnl|accession=AF302086|name=Pseudomonas aeruginosa|gene=intI1|host=idbi123
+>gnl|accession=AF313472|name=Pseudomonas aeruginosa|gene=intI1|host=idbi202
+>gnl|accession=AF314189|name=uncultured bacterium BAL3|gene=intI8|host=idbi2661
+>gnl|accession=AF314190|name=uncultured bacterium PG11|gene=intI7|host=idbi958
+>gnl|accession=AF314191|name=uncultured bacterium PG2|gene=intI6|host=idbi957
+>gnl|accession=AF315351|name=Pseudomonas aeruginosa|gene=intI1|host=idbi911
+>gnl|accession=AF317511|name=Pseudomonas aeruginosa|gene=intI1|host=idbi744
+>gnl|accession=AF318070|name=Escherichia coli|gene=intI2|host=idbi703
+>gnl|accession=AF318071|name=Escherichia coli|gene=intI2|host=idbi702
+>gnl|accession=AF322577|name=Klebsiella pneumoniae|gene=intI1delta|host=idbi455
+>gnl|accession=AF324210|name=Shewanella putrefaciens|gene=intIB|host=idbi918
+>gnl|accession=AF324211|name=Shewanella putrefaciens|gene=intIA|host=idbi917
+>gnl|accession=AF324464|name=Acinetobacter baumannii|gene=intI1|host=idbi908
+>gnl|accession=AF324482|name=Xanthomonas campestris pv. badrii|gene=intIB|host=idbi916
+>gnl|accession=AF324483|name=Xanthomonas campestris pv. campestris|gene=intIA|host=idbi915
+>gnl|accession=AF324484|name=Xanthomonas sp. CIP 102397|gene=intIA|host=idbi914
+>gnl|accession=AF326777|name=Shigella flexneri |gene=intI1|host=idbi1314
+>gnl|accession=AF327064|name=Pseudomonas putida|gene=intI1|host=idbi704
+>gnl|accession=AF347074|name=Pseudomonas aeruginosa|gene=intI1|host=idbi693
+>gnl|accession=AF406792|name=Stenotrophomonas maltophilia|gene=intI1|host=idbi1315
+>gnl|accession=AF439785|name=Campylobacter jejuni|gene=intI1|host=idbi884
+>gnl|accession=AF439786|name=Campylobacter jejuni|gene=intI1|host=idbi883
+>gnl|accession=AF453998|name=Serratia marcescens|gene=intron|host=idbc4007
+>gnl|accession=AF455254|name=Vibrio cholerae|gene=intI1|host=idbi1317
+>gnl|accession=AF458080|name=Klebsiella pneumoniae|gene=intI1|host=idbi961
+>gnl|accession=AF458081|name=Citrobacter freundii|gene=intI1|host=idbi887
+>gnl|accession=AF458082|name=Citrobacter freundii|gene=intI1|host=idbi886
+>gnl|accession=AF486817|name=Citrobacter amalonaticus|gene=intI1|host=idbi186
+>gnl|accession=AF539751|name=Vibrio vulnificus|gene=intIA|host=idbi875
+>gnl|accession=AF550679|name=Escherichia coli|gene=intI1|host=idbi1130
+>gnl|accession=AJ001816|name=Escherichia coli|gene=intI2|host=idbi792
+>gnl|accession=AJ009818|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi791
+>gnl|accession=AJ009820|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi751
+>gnl|accession=AJ223604|name=Pseudomonas aeruginosa|gene=intI1|host=idbi788
+>gnl|accession=AJ237702|name=Salmonella enterica subsp. enterica serovar Enteritidis|gene=intI1|host=idbi787
+>gnl|accession=AJ243491|name=Acinetobacter baumannii|gene=intI1|host=idbi784
+>gnl|accession=AJ245670|name=Salmonella enterica subsp. enterica|gene=intI1|host=idbi757
+>gnl|accession=AJ277027|name=Klebsiella pneumoniae|gene=intI1|host=idbi188
+>gnl|accession=AJ277063|name=Vibrio salmonicida|gene=intI|host=idbi782
+>gnl|accession=AJ313334|name=Acinetobacter baumannii|gene=intI1|host=idbi860
+>gnl|accession=AJ319747|name=Acinetobacter baumannii|gene=intI1|host=idbi777
+>gnl|accession=AJ420864|name=Pseudomonas putida|gene=intI1|host=idbi1320
+>gnl|accession=AJ511268|name=Pseudomonas aeruginosa|gene=intI1|host=idbi771
+>gnl|accession=AJ561197|name=Escherichia coli|gene=intI1|host=idbi761
+>gnl|accession=AJ584652|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1271
+>gnl|accession=AJ585042|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1322
+>gnl|accession=AJ620678|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1324
+>gnl|accession=AJ621187|name=Morganella morganii |gene=intI1|host=idbi764
+>gnl|accession=AJ628423|name=Escherichia coli|gene=intI1|host=idbi1327
+>gnl|accession=AJ628983|name=Pseudomonas aeruginosa|gene=intI1|host=idbi760
+>gnl|accession=AJ639924|name=IncP-1beta Plasmid pB3|gene=intI1|host=idbi2451
+>gnl|accession=AJ640197|name=Acinetobacter baumannii|gene=intI1|host=idbi762
+>gnl|accession=AJ704863|name=Klebsiella pneumoniae|gene=intI1|host=idbc1180
+>gnl|accession=AJ784804|name=Pseudomonas aeruginosa|gene=intI1|host=idbi811
+>gnl|accession=AJ812570|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1332
+>gnl|accession=AJ851089|name=uncultured bacterium|gene=intI1|host=idbi1056
+>gnl|accession=AJ867811|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1818
+>gnl|accession=AJ870926|name=Salmonella enterica subsp. enterica serovar Mbandaka|gene=intI1|host=idbi1342
+>gnl|accession=AJ870988|name=Klebsiella pneumoniae|gene=intI1|host=idbi1343
+>gnl|accession=AJ878850|name=Pseudomonas aeruginosa|gene=intI1|host=idbi427
+>gnl|accession=AJ938161|name=Morganella morganii|gene=intI2|host=idbi687
+>gnl|accession=AJ971341|name=Klebsiella pneumoniae plasmid pKp760|gene=intI1|host=idbi602
+>gnl|accession=AJ971342|name=Klebsiella pneumoniae|gene=intI1|host=idbi450
+>gnl|accession=AJ971343|name=Klebsiella pneumoniae plasmid pRBDHA|gene=intI1|host=idbi601
+>gnl|accession=AJ971344|name=Klebsiella oxytoca|gene=intI1|host=idbi600
+>gnl|accession=AL954747|name=Nitrosomonas europaea ATCC 19718|gene=intINeu|host=idbi1568
+>gnl|accession=AM040449|name=Klebsiella pneumoniae|gene=intI1|host=idbi680
+>gnl|accession=AM040708|name=Escherichia coli|gene=intI1|host=idbi613
+>gnl|accession=AM040709|name=Escherichia coli|gene=intI1|host=idbi612
+>gnl|accession=AM040710|name=Escherichia coli|gene=intI1|host=idbi611
+>gnl|accession=AM055748|name=Salmonella enterica|gene=intI1|host=idbi523
+>gnl|accession=AM055749|name=Salmonella enterica|gene=intI2|host=idbi1045
+>gnl|accession=AM181293|name=Klebsiella pneumoniae|gene=intI1|host=idbi1346
+>gnl|accession=AM183120|name=Enterobacter cloacae|gene=intI1|host=idbi581
+>gnl|accession=AM231806|name=Escherichia coli|gene=intI1|host=idbi1134
+>gnl|accession=AM261760|name=Pseudomonas aeruginosa IncP-1alpha plasmid pBS228|gene=intI2|host=idbi948
+>gnl|accession=AM261837|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi1001
+>gnl|accession=AM295980|name=Escherichia coli|gene=intI1|host=idbi364
+>gnl|accession=AM392427|name=Pseudomonas aeruginosa|gene=intI1|host=idbi493
+>gnl|accession=AM746675|name=Salmonella enterica subsp. enterica serovar Brandenburg|gene=intI1|host=idbi288
+>gnl|accession=AM774408|name=Pseudomonas aeruginosa|gene=intI1|host=idbi310
+>gnl|accession=AM905244|name=Xanthomonas arboricola pv. juglandis|gene=intI|host=idbi1781
+>gnl|accession=AM905372|name=Xanthomonas arboricola pv. juglandis|gene=intI|host=idbi326
+>gnl|accession=AM905374|name=Xanthomonas arboricola pv. pruni|gene=intI|host=idbi325
+>gnl|accession=AM905375|name=Xanthomonas arboricola pv. pruni|gene=intI|host=idbi324
+>gnl|accession=AM932669|name=Salmonella enterica subsp. enterica serovar Bredeney|gene=intron|host=idbc1318
+>gnl|accession=AM932677|name=Escherichia coli|gene=intI2|host=idbi1141
+>gnl|accession=AM937241|name=uncultured bacterium|gene=intI1|host=idbi1192
+>gnl|accession=AM937243|name=uncultured bacterium|gene=intI1|host=idbi1193
+>gnl|accession=AM991327|name=uncultured bacterium|gene=intI1|host=idbi1006
+>gnl|accession=AM991328|name=uncultured bacterium|gene=intI1|host=idbi1005
+>gnl|accession=AM991329|name=uncultured bacterium|gene=intI1|host=idbi1194
+>gnl|accession=AM997274|name=uncultured bacterium|gene=intI1|host=idbi996
+>gnl|accession=AM997279|name=Klebsiella sp. MB45|gene=intI1|host=idbi2699
+>gnl|accession=AM997280|name=uncultured bacterium|gene=intI1|host=idbi994
+>gnl|accession=AY007807|name=Klebsiella pneumoniae|gene=intI1|host=idbi724
+>gnl|accession=AY014398|name=Vibrio metschnikovii|gene=intIA|host=idbi874
+>gnl|accession=AY014399|name=Vibrio parahaemolyticus|gene=intIA|host=idbi913
+>gnl|accession=AY014400|name=Vibrio fischeri|gene=intIA|host=idbi826
+>gnl|accession=AY014401|name=Listonella pelagia|gene=intIA|host=idbi880
+>gnl|accession=AY029772|name=Pseudomonas aeruginosa|gene=intI1|host=idbi309
+>gnl|accession=AY030343|name=Serratia marcescens|gene=intI1|host=idbi879
+>gnl|accession=AY035340|name=Vibrio cholerae O1 biovar El tor|gene=intI9|host=idbi1059
+>gnl|accession=AY038186|name=Pseudomonas alcaligenes|gene=intIPac|host=idbi453
+>gnl|accession=AY038837|name=Acinetobacter baumannii|gene=intI1|host=idbi183
+>gnl|accession=AY065966|name=Pseudomonas putida|gene=intI1|host=idbi307
+>gnl|accession=AY069972|name=Citrobacter freundii|gene=intI1|host=idbi885
+>gnl|accession=AY126447|name=Listonella anguillarum|gene=intIA|host=idbi872
+>gnl|accession=AY129391|name=uncultured bacterium|gene=intI|host=idbi878
+>gnl|accession=AY129392|name=Pseudomonas stutzeri|gene=intIQ|host=idbi877
+>gnl|accession=AY129393|name=Pseudomonas stutzeri|gene=intIPstB|host=idbi1043
+>gnl|accession=AY136758|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi876
+>gnl|accession=AY138987|name=Acinetobacter baumannii|gene=intI1|host=idbi868
+>gnl|accession=AY146989|name=Salmonella enterica subsp. enterica serovar Albany|gene=intI1|host=idbi2597
+>gnl|accession=AY152821|name=Escherichia coli|gene=intI1|host=idbi121
+>gnl|accession=AY162283|name=Citrobacter freundii|gene=intI1|host=idbi955
+>gnl|accession=AY181034|name=Vibrio natriegens|gene=intIA|host=idbi873
+>gnl|accession=AY219651|name=Klebsiella pneumoniae Plasmid p22K9|gene=intI3|host=idbi179
+>gnl|accession=AY224185|name=Escherichia coli|gene=intI1|host=idbi861
+>gnl|accession=AY232671|name=Pasteurella multocida plasmid pJR2|gene=intI1delta|host=idbi867
+>gnl|accession=AY245101|name=Salmonella enterica subsp. enterica serovar Typhi|gene=intI1|host=idbi820
+>gnl|accession=AY257539|name=Pseudomonas aeruginosa|gene=intI1|host=idbi951
+>gnl|accession=AY283623|name=uncultured bacterium|gene=intI|host=idbi178
+>gnl|accession=AY283624|name=uncultured bacterium|gene=intI|host=idbi177
+>gnl|accession=AY283625|name=uncultured bacterium|gene=intI|host=idbi176
+>gnl|accession=AY283626|name=uncultured bacterium|gene=intI|host=idbi175
+>gnl|accession=AY283627|name=uncultured bacterium|gene=intI|host=idbi174
+>gnl|accession=AY283628|name=uncultured bacterium|gene=intI|host=idbi173
+>gnl|accession=AY283629|name=uncultured bacterium|gene=intI|host=idbi172
+>gnl|accession=AY283630|name=uncultured bacterium|gene=intI|host=idbi171
+>gnl|accession=AY283631|name=uncultured bacterium|gene=intI|host=idbi170
+>gnl|accession=AY283632|name=uncultured bacterium|gene=intI|host=idbi169
+>gnl|accession=AY283633|name=uncultured bacterium|gene=intI|host=idbi168
+>gnl|accession=AY283634|name=uncultured bacterium|gene=intI|host=idbi167
+>gnl|accession=AY283635|name=uncultured bacterium|gene=intI|host=idbi166
+>gnl|accession=AY283636|name=uncultured bacterium|gene=intI|host=idbi165
+>gnl|accession=AY283637|name=uncultured bacterium|gene=intI|host=idbi164
+>gnl|accession=AY283638|name=uncultured bacterium|gene=intI|host=idbi949
+>gnl|accession=AY289608|name=Salmonella enterica subsp. enterica serovar Agona|gene=intI1|host=idbi840
+>gnl|accession=AY294333|name=Pseudomonas aeruginosa|gene=intI1|host=idbi950
+>gnl|accession=AY339985|name=Salmonella typhimurium DT104|gene=groEL/intI1|host=idbi1372
+>gnl|accession=AY370764|name=Klebsiella pneumoniae|gene=intI1|host=idbi835
+>gnl|accession=AY444814|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1033
+>gnl|accession=AY458224|name=Salmonella enterica subsp. enterica serovar Newport|gene=intI1|host=idbi1373
+>gnl|accession=AY460181|name=Pseudomonas aeruginosa|gene=intI1|host=idbi954
+>gnl|accession=AY524415|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi2598
+>gnl|accession=AY560837|name=Pseudomonas aeruginosa|gene=intI1|host=idbi813
+>gnl|accession=AY574195|name=Shigella flexneri|gene=intI1|host=idbi1376
+>gnl|accession=AY600086|name=Plasmid IncP-1beta pB10-2|gene=intI1|host=idbi604
+>gnl|accession=AY602403|name=Escherichia coli|gene=intI1|host=idbi1144
+>gnl|accession=AY648125|name=Enterobacter cloacae|gene=intI1|host=idbi740
+>gnl|accession=AY685199|name=Pseudomonas pseudoalcaligenes|gene=intI1|host=idbi743
+>gnl|accession=AY686225|name=Achromobacter xylosoxidans|gene=intI1|host=idbi636
+>gnl|accession=AY740681|name=Aeromonas punctata|gene=intI1|host=idbi649
+>gnl|accession=AY775051|name=Pseudomonas aeruginosa|gene=intI1|host=idbi816
+>gnl|accession=AY781413|name=Escherichia coli|gene=intI1|host=idbi819
+>gnl|accession=AY785243|name=Escherichia coli|gene=intron|host=idbc3120
+>gnl|accession=AY816215|name=Escherichia coli plasmid pCVM862|gene=intI1|host=idbi797
+>gnl|accession=AY878717|name=Escherichia coli plasmid pKO97|gene=intI1|host=idbi129
+>gnl|accession=AY884050|name=Serratia marcescens|gene=intI1|host=idbi806
+>gnl|accession=AY887066|name=Acinetobacter genomosp. 3|gene=intI1|host=idbi644
+>gnl|accession=AY907717|name=Pseudomonas putida|gene=intI1|host=idbi303
+>gnl|accession=AY913771|name=Pseudomonas aeruginosa|gene=intI1|host=idbi664
+>gnl|accession=AY913772|name=Pseudomonas aeruginosa|gene=intI1|host=idbi663
+>gnl|accession=AY920928|name=Pseudomonas aeruginosa|gene=intI1|host=idbi671
+>gnl|accession=AY928773|name=Xanthomonas campestris pv. Vitians|gene=intI|host=idbi142
+>gnl|accession=AY928774|name=Xanthomonas campestris pv. vitians|gene=intI|host=idbi119
+>gnl|accession=AY928774|name=Xanthomonas campestris pv. vitians|gene=intI|host=idbi120
+>gnl|accession=AY928775|name=Xanthomonas perforans|gene=intI|host=idbi141
+>gnl|accession=AY928777|name=Xanthomonas axonopodis pv. Axonopodis|gene=intI|host=idbi139
+>gnl|accession=AY928778|name=Xanthomonas axonopodis pv. Citri |gene=intI|host=idbi138
+>gnl|accession=AY928784|name=Xanthomonas campestris pv. campestris|gene=intI|host=idbi132
+>gnl|accession=AY928785|name=Xanthomonas campestris pv. begoniae|gene=intI|host=idbi131
+>gnl|accession=AY928787|name=Xanthomonas translucens|gene=intI|host=idbi153
+>gnl|accession=AY928788|name=Xanthomonas perforans|gene=intI|host=idbi152
+>gnl|accession=AY928789|name=Xanthomonas campestris pv. Oryzae|gene=intI|host=idbi151
+>gnl|accession=AY928790|name=Xanthomonas campestris pv. Vitians|gene=intI|host=idbi150
+>gnl|accession=AY928791|name=Xanthomonas arboricola pv. Pruni strain DAR72009|gene=intI|host=idbi149
+>gnl|accession=AY928794|name=Xanthomonas campestris pv. Oryzae|gene=intI|host=idbi146
+>gnl|accession=AY928795|name=Xanthomonas campestris|gene=intI|host=idbi145
+>gnl|accession=AY928796|name=Xanthomonas campestris pv. Pelargonii|gene=intI|host=idbi144
+>gnl|accession=AY943084|name=Pseudomonas aeruginosa|gene=intI1|host=idbi674
+>gnl|accession=AY954726|name=Pseudomonas aeruginosa|gene=intI1|host=idbi798
+>gnl|accession=AY970968|name=Escherichia coli|gene=intI1|host=idbi673
+>gnl|accession=BX248359|name=Corynebacterium diphtheriae|gene=intI1|host=idbi1386
+>gnl|accession=BX664015|name=Serratia marcescens|gene=intI1|host=idbi1387
+>gnl|accession=CP000089|name=Dechloromonas aromatica RCB|gene=intI|host=idbi1537
+>gnl|accession=CP000282|name=Saccharophagus degradans 2-40|gene=intI|host=idbi2112
+>gnl|accession=CP000450|name=Nitrosomonas eutropha C91|gene=intI|host=idbi2042
+>gnl|accession=CP000453|name=Alkalilimnicola ehrlichii MLHE-1|gene=intI|host=idbi2040
+>gnl|accession=CP000453|name=Alkalilimnicola ehrlichii MLHE-1|gene=intI|host=idbi2041
+>gnl|accession=CP000482|name=Pelobacter propionicus DSM 2379|gene=intI|host=idbi1138
+>gnl|accession=CP000893|name=Shewanella baltica plasmid pS19502|gene=intI|host=idbi323
+>gnl|accession=CP001089|name=Geobacter lovleyi SZ|gene=intI|host=idbi1132
+>gnl|accession=CP001182|name=<i>Acinetobacter baumannii</i> <sub>AB0057</sub>|gene=<i>intI1delta</i>|host=idbi2790
+>gnl|accession=CP001614|name=Teredinibacter turnerae T7901|gene=intI|host=idbi2246
+>gnl|accession=CP001614|name=Teredinibacter turnerae T7901|gene=intI|host=idbi2247
+>gnl|accession=CP001715|name=Candidatus Accumulibacter phosphatis clade IIA str. UW-1|gene=intI|host=idbi2378
+>gnl|accession=CP001921|name=<i>Acinetobacter baumannii</i> 1656-2|gene=<i>intI1</i>|host=idbi2791
+>gnl|accession=CP003209|name=<i>Corynebacterium diphtheriae</i> <sub>BH8</sub>|gene=<i>intI1</i> (truncated)|host=idbi2822
+>gnl|accession=CP003225|name=<i>Klebsiella pneumoniae</i>|gene=<i>intI1</i>|host=idbi2802
+>gnl|accession=D78374|name=Pseudomonas aeruginosa|gene=intI1|host=idbi938
+>gnl|accession=DQ091178|name=Pseudomonas aeruginosa|gene=intI1|host=idbi465
+>gnl|accession=DQ092497|name=Acinetobacter baumannii|gene=intI1|host=idbi462
+>gnl|accession=DQ112222|name=Achromobacter denitrificans|gene=fused orf/intI1|host=idbc2987
+>gnl|accession=DQ139261|name=Vibrio sp. strain DAT722|gene=intI|host=idbi117
+>gnl|accession=DQ141316|name=Pseudomonas aeruginosa|gene=intI1|host=idbi459
+>gnl|accession=DQ141318|name=Acinetobacter baumannii|gene=intI1|host=idbi461
+>gnl|accession=DQ149925|name=Vibrio cholerae|gene=intI1|host=idbi1415
+>gnl|accession=DQ153217|name=Klebsiella pneumoniae|gene=intI1|host=idbi518
+>gnl|accession=DQ153218|name=Klebsiella pneumoniae|gene=intI1|host=idbi517
+>gnl|accession=DQ219465|name=Pseudomonas aeruginosa|gene=intI1|host=idbi646
+>gnl|accession=DQ221760|name=Escherichia coli|gene=intI1|host=idbi380
+>gnl|accession=DQ236170|name=Pseudomonas aeruginosa|gene=intI1|host=idbi401
+>gnl|accession=DQ238102|name=Salmonella enterica subsp. enterica serovar Tallahassee|gene=intI1|host=idbi589
+>gnl|accession=DQ238103|name=Salmonella enterica subsp. enterica serovar Albany|gene=intI1|host=idbi590
+>gnl|accession=DQ238104|name=Salmonella enterica subsp. enterica serovar Albany|gene=intI1|host=idbi586
+>gnl|accession=DQ282194|name=uncultured bacterium|gene=intI2|host=idbi1794
+>gnl|accession=DQ282196|name=uncultured bacterium|gene=intI3|host=idbi1399
+>gnl|accession=DQ282197|name=uncultured bacterium|gene=intI|host=idbi1796
+>gnl|accession=DQ282198|name=uncultured bacterium|gene=intI2|host=idbi1797
+>gnl|accession=DQ282199|name=uncultured bacterium|gene=intI3|host=idbi1398
+>gnl|accession=DQ282200|name=uncultured bacterium|gene=intI3|host=idbi1397
+>gnl|accession=DQ282202|name=uncultured bacterium|gene=intI|host=idbi1936
+>gnl|accession=DQ282203|name=uncultured bacterium|gene=intI2|host=idbi1937
+>gnl|accession=DQ282204|name=uncultured bacterium|gene=intI|host=idbi1938
+>gnl|accession=DQ282205|name=uncultured bacterium|gene=intI1|host=idbi1434
+>gnl|accession=DQ282206|name=uncultured bacterium|gene=intI|host=idbi1943
+>gnl|accession=DQ282207|name=uncultured bacterium|gene=intI|host=idbi1777
+>gnl|accession=DQ282208|name=uncultured bacterium|gene=intI|host=idbi1776
+>gnl|accession=DQ282209|name=uncultured bacterium|gene=intI|host=idbi1775
+>gnl|accession=DQ282210|name=uncultured bacterium|gene=intI|host=idbi1944
+>gnl|accession=DQ282211|name=uncultured bacterium|gene=intI|host=idbi1945
+>gnl|accession=DQ282212|name=uncultured bacterium|gene=intI|host=idbi1778
+>gnl|accession=DQ282213|name=uncultured bacterium|gene=intI|host=idbi1946
+>gnl|accession=DQ282214|name=uncultured bacterium|gene=intI|host=idbi1947
+>gnl|accession=DQ282215|name=uncultured bacterium|gene=intI|host=idbi1617
+>gnl|accession=DQ282216|name=uncultured bacterium|gene=intI|host=idbi1948
+>gnl|accession=DQ282217|name=uncultured bacterium|gene=intI|host=idbi1949
+>gnl|accession=DQ282218|name=uncultured bacterium|gene=intI|host=idbi1950
+>gnl|accession=DQ282219|name=uncultured bacterium|gene=intI|host=idbi1951
+>gnl|accession=DQ282220|name=uncultured bacterium|gene=intI|host=idbi1952
+>gnl|accession=DQ282221|name=uncultured bacterium|gene=intI|host=idbi1953
+>gnl|accession=DQ282222|name=uncultured bacterium|gene=intI|host=idbi1954
+>gnl|accession=DQ282223|name=uncultured bacterium|gene=intI|host=idbi1955
+>gnl|accession=DQ282224|name=uncultured bacterium|gene=intI|host=idbi1939
+>gnl|accession=DQ282225|name=uncultured bacterium|gene=intI|host=idbi1940
+>gnl|accession=DQ282226|name=uncultured bacterium|gene=intI|host=idbi1941
+>gnl|accession=DQ282227|name=uncultured bacterium|gene=intI|host=idbi1942
+>gnl|accession=DQ282228|name=uncultured bacterium|gene=intI|host=idbi1935
+>gnl|accession=DQ282229|name=uncultured bacterium|gene=intI|host=idbi1956
+>gnl|accession=DQ282230|name=uncultured bacterium|gene=intI|host=idbi1957
+>gnl|accession=DQ282231|name=uncultured bacterium|gene=intI|host=idbi1958
+>gnl|accession=DQ282232|name=uncultured bacterium|gene=intI|host=idbi1959
+>gnl|accession=DQ282233|name=uncultured bacterium|gene=intI|host=idbi1960
+>gnl|accession=DQ282234|name=uncultured bacterium|gene=intI|host=idbi1961
+>gnl|accession=DQ282235|name=uncultured bacterium|gene=intI|host=idbi1962
+>gnl|accession=DQ282236|name=uncultured bacterium|gene=intI|host=idbi1963
+>gnl|accession=DQ282237|name=uncultured bacterium|gene=intI|host=idbi1964
+>gnl|accession=DQ282238|name=uncultured bacterium|gene=intI|host=idbi1965
+>gnl|accession=DQ282239|name=uncultured bacterium|gene=intI|host=idbi1966
+>gnl|accession=DQ282240|name=uncultured bacterium|gene=intI|host=idbi1967
+>gnl|accession=DQ282241|name=uncultured bacterium|gene=intI|host=idbi1968
+>gnl|accession=DQ282242|name=uncultured bacterium|gene=intI|host=idbi1969
+>gnl|accession=DQ282243|name=uncultured bacterium|gene=intI|host=idbi1970
+>gnl|accession=DQ282244|name=uncultured bacterium|gene=intI|host=idbi1971
+>gnl|accession=DQ282245|name=uncultured bacterium|gene=intI|host=idbi1972
+>gnl|accession=DQ282246|name=uncultured bacterium|gene=intI|host=idbi1973
+>gnl|accession=DQ282247|name=uncultured bacterium|gene=intI|host=idbi1637
+>gnl|accession=DQ282248|name=uncultured bacterium|gene=intI|host=idbi1650
+>gnl|accession=DQ282249|name=uncultured bacterium|gene=intI|host=idbi1638
+>gnl|accession=DQ282250|name=uncultured bacterium|gene=intI|host=idbi1636
+>gnl|accession=DQ282251|name=uncultured bacterium|gene=intI|host=idbi1639
+>gnl|accession=DQ282252|name=uncultured bacterium|gene=intI|host=idbi1640
+>gnl|accession=DQ282253|name=uncultured bacterium|gene=intI|host=idbi1641
+>gnl|accession=DQ282254|name=uncultured bacterium|gene=intI|host=idbi1642
+>gnl|accession=DQ282255|name=uncultured bacterium|gene=intI|host=idbi1643
+>gnl|accession=DQ282256|name=uncultured bacterium|gene=intI|host=idbi1644
+>gnl|accession=DQ282257|name=uncultured bacterium|gene=intI|host=idbi1645
+>gnl|accession=DQ282258|name=uncultured bacterium|gene=intI|host=idbi1646
+>gnl|accession=DQ282259|name=uncultured bacterium|gene=intI|host=idbi1647
+>gnl|accession=DQ282260|name=uncultured bacterium|gene=intI|host=idbi1648
+>gnl|accession=DQ282261|name=uncultured bacterium|gene=intI|host=idbi1649
+>gnl|accession=DQ282262|name=uncultured bacterium|gene=intI|host=idbi347
+>gnl|accession=DQ282263|name=uncultured bacterium|gene=intI|host=idbi2360
+>gnl|accession=DQ282264|name=uncultured bacterium|gene=intI|host=idbi346
+>gnl|accession=DQ282265|name=uncultured bacterium|gene=intI|host=idbi345
+>gnl|accession=DQ282266|name=uncultured bacterium|gene=intI|host=idbi344
+>gnl|accession=DQ282267|name=uncultured bacterium|gene=intI|host=idbi343
+>gnl|accession=DQ282268|name=uncultured bacterium|gene=intI|host=idbi342
+>gnl|accession=DQ282269|name=uncultured bacterium|gene=intI|host=idbi341
+>gnl|accession=DQ282270|name=uncultured bacterium|gene=intI|host=idbi340
+>gnl|accession=DQ282271|name=uncultured bacterium|gene=intI|host=idbi339
+>gnl|accession=DQ282272|name=uncultured bacterium|gene=intI|host=idbi338
+>gnl|accession=DQ282273|name=uncultured bacterium|gene=intI|host=idbi337
+>gnl|accession=DQ282274|name=uncultured bacterium|gene=intI|host=idbi336
+>gnl|accession=DQ282275|name=uncultured bacterium|gene=intI|host=idbi335
+>gnl|accession=DQ282276|name=uncultured bacterium|gene=intI|host=idbi334
+>gnl|accession=DQ282277|name=uncultured bacterium|gene=intI|host=idbi333
+>gnl|accession=DQ282278|name=uncultured bacterium|gene=intI|host=idbi332
+>gnl|accession=DQ282279|name=uncultured bacterium|gene=intI|host=idbi331
+>gnl|accession=DQ282280|name=uncultured bacterium|gene=intI|host=idbi330
+>gnl|accession=DQ282281|name=uncultured bacterium|gene=intI|host=idbi329
+>gnl|accession=DQ282282|name=uncultured bacterium|gene=intI|host=idbi328
+>gnl|accession=DQ282283|name=uncultured bacterium|gene=intI|host=idbi327
+>gnl|accession=DQ282284|name=uncultured bacterium|gene=intI|host=idbi1651
+>gnl|accession=DQ282285|name=uncultured bacterium|gene=intI|host=idbi1652
+>gnl|accession=DQ282286|name=uncultured bacterium|gene=intI|host=idbi1653
+>gnl|accession=DQ282287|name=uncultured bacterium|gene=intI|host=idbi1654
+>gnl|accession=DQ282288|name=uncultured bacterium|gene=intI|host=idbi1655
+>gnl|accession=DQ282289|name=uncultured bacterium|gene=intI|host=idbi1656
+>gnl|accession=DQ282290|name=uncultured bacterium|gene=intI|host=idbi1657
+>gnl|accession=DQ282291|name=uncultured bacterium|gene=intI|host=idbi1658
+>gnl|accession=DQ282292|name=uncultured bacterium|gene=intI|host=idbi1659
+>gnl|accession=DQ282293|name=uncultured bacterium|gene=intI|host=idbi1660
+>gnl|accession=DQ282294|name=uncultured bacterium|gene=intI|host=idbi1661
+>gnl|accession=DQ282295|name=uncultured bacterium|gene=intI|host=idbi1662
+>gnl|accession=DQ282296|name=uncultured bacterium|gene=intI|host=idbi1663
+>gnl|accession=DQ282297|name=uncultured bacterium|gene=intI|host=idbi1664
+>gnl|accession=DQ282298|name=uncultured bacterium|gene=intI|host=idbi1665
+>gnl|accession=DQ282299|name=uncultured bacterium|gene=intI|host=idbi1666
+>gnl|accession=DQ282300|name=uncultured bacterium|gene=intI|host=idbi1667
+>gnl|accession=DQ282301|name=uncultured bacterium|gene=intI|host=idbi1668
+>gnl|accession=DQ282302|name=uncultured bacterium|gene=intI|host=idbi1669
+>gnl|accession=DQ282303|name=uncultured bacterium|gene=intI|host=idbi1670
+>gnl|accession=DQ282304|name=uncultured bacterium|gene=intI|host=idbi1671
+>gnl|accession=DQ282305|name=uncultured bacterium|gene=intI|host=idbi1672
+>gnl|accession=DQ282308|name=uncultured bacterium|gene=intI|host=idbi1675
+>gnl|accession=DQ282309|name=uncultured bacterium|gene=intI|host=idbi1676
+>gnl|accession=DQ282311|name=uncultured bacterium|gene=intI|host=idbi1678
+>gnl|accession=DQ282312|name=uncultured bacterium|gene=intI|host=idbi1679
+>gnl|accession=DQ282313|name=uncultured bacterium|gene=intI|host=idbi1680
+>gnl|accession=DQ282314|name=uncultured bacterium|gene=intI|host=idbi1681
+>gnl|accession=DQ282317|name=uncultured bacterium|gene=intI|host=idbi1683
+>gnl|accession=DQ282318|name=uncultured bacterium|gene=intI|host=idbi1684
+>gnl|accession=DQ282319|name=uncultured bacterium|gene=intI|host=idbi1685
+>gnl|accession=DQ282320|name=uncultured bacterium|gene=intI|host=idbi1686
+>gnl|accession=DQ282321|name=uncultured bacterium|gene=intI|host=idbi1687
+>gnl|accession=DQ282322|name=uncultured bacterium|gene=intI|host=idbi1688
+>gnl|accession=DQ282323|name=uncultured bacterium|gene=intI|host=idbi1689
+>gnl|accession=DQ282324|name=uncultured bacterium|gene=intI|host=idbi1690
+>gnl|accession=DQ282325|name=uncultured bacterium|gene=intI|host=idbi1691
+>gnl|accession=DQ282326|name=uncultured bacterium|gene=intI|host=idbi1692
+>gnl|accession=DQ282327|name=uncultured bacterium|gene=intI|host=idbi1693
+>gnl|accession=DQ282329|name=uncultured bacterium|gene=intI|host=idbi1695
+>gnl|accession=DQ282331|name=uncultured bacterium|gene=intI|host=idbi1697
+>gnl|accession=DQ282332|name=uncultured bacterium|gene=intI|host=idbi1698
+>gnl|accession=DQ282333|name=uncultured bacterium|gene=intI|host=idbi1699
+>gnl|accession=DQ282334|name=uncultured bacterium|gene=intI|host=idbi1700
+>gnl|accession=DQ282336|name=uncultured bacterium|gene=intI|host=idbi1702
+>gnl|accession=DQ282339|name=uncultured bacterium|gene=intI|host=idbi1705
+>gnl|accession=DQ282340|name=uncultured bacterium|gene=intI|host=idbi1706
+>gnl|accession=DQ282346|name=uncultured bacterium|gene=intI|host=idbi1712
+>gnl|accession=DQ282347|name=uncultured bacterium|gene=intI|host=idbi1713
+>gnl|accession=DQ282348|name=uncultured bacterium|gene=intI|host=idbi1714
+>gnl|accession=DQ282349|name=uncultured bacterium|gene=intI|host=idbi1715
+>gnl|accession=DQ282350|name=uncultured bacterium|gene=intI|host=idbi1716
+>gnl|accession=DQ282351|name=uncultured bacterium|gene=intI|host=idbi1717
+>gnl|accession=DQ282352|name=uncultured bacterium|gene=intI|host=idbi1718
+>gnl|accession=DQ282353|name=uncultured bacterium|gene=intI|host=idbi1719
+>gnl|accession=DQ282354|name=uncultured bacterium|gene=intI|host=idbi1720
+>gnl|accession=DQ282355|name=uncultured bacterium|gene=intI|host=idbi1721
+>gnl|accession=DQ282356|name=uncultured bacterium|gene=intI|host=idbi1722
+>gnl|accession=DQ282357|name=uncultured bacterium|gene=intI|host=idbi1723
+>gnl|accession=DQ282358|name=uncultured bacterium|gene=intI|host=idbi1724
+>gnl|accession=DQ282359|name=uncultured bacterium|gene=intI|host=idbi1725
+>gnl|accession=DQ282360|name=uncultured bacterium|gene=intI|host=idbi1743
+>gnl|accession=DQ282361|name=uncultured bacterium|gene=intI|host=idbi1726
+>gnl|accession=DQ282362|name=uncultured bacterium|gene=intI|host=idbi1727
+>gnl|accession=DQ282363|name=uncultured bacterium|gene=intI|host=idbi1728
+>gnl|accession=DQ282364|name=uncultured bacterium|gene=intI|host=idbi1729
+>gnl|accession=DQ282365|name=uncultured bacterium|gene=intI|host=idbi1730
+>gnl|accession=DQ282366|name=uncultured bacterium|gene=intI|host=idbi1731
+>gnl|accession=DQ282367|name=uncultured bacterium|gene=intI|host=idbi1732
+>gnl|accession=DQ282368|name=uncultured bacterium|gene=intI|host=idbi1733
+>gnl|accession=DQ282369|name=uncultured bacterium|gene=intI|host=idbi1734
+>gnl|accession=DQ282370|name=uncultured bacterium|gene=intI|host=idbi1735
+>gnl|accession=DQ282371|name=uncultured bacterium|gene=intI|host=idbi1736
+>gnl|accession=DQ282373|name=uncultured bacterium|gene=intI|host=idbi1738
+>gnl|accession=DQ282374|name=uncultured bacterium|gene=intI|host=idbi1740
+>gnl|accession=DQ282375|name=uncultured bacterium|gene=intI|host=idbi1739
+>gnl|accession=DQ282376|name=uncultured bacterium|gene=intI|host=idbi1741
+>gnl|accession=DQ284538|name=Salmonella enterica subsp. enterica serovar Kedougou|gene=intI1|host=idbi585
+>gnl|accession=DQ287857|name=uncultured bacterium|gene=intI|host=idbi630
+>gnl|accession=DQ287858|name=uncultured bacterium|gene=intI|host=idbi629
+>gnl|accession=DQ287859|name=uncultured bacterium|gene=intI|host=idbi628
+>gnl|accession=DQ287860|name=uncultured bacterium|gene=intI2|host=idbi627
+>gnl|accession=DQ287861|name=uncultured bacterium|gene=intI|host=idbi626
+>gnl|accession=DQ287862|name=uncultured bacterium|gene=intI|host=idbi625
+>gnl|accession=DQ287863|name=uncultured bacterium|gene=intI|host=idbi624
+>gnl|accession=DQ288156|name=Pseudomonas aeruginosa|gene=intI1|host=idbi272
+>gnl|accession=DQ288250|name=Acinetobacter baumannii|gene=intI1|host=idbi458
+>gnl|accession=DQ288251|name=Pseudomonas aeruginosa|gene=intI1|host=idbi457
+>gnl|accession=DQ372711|name=Azoarcus communis|gene=intI1|host=idbi1592
+>gnl|accession=DQ388126|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi376
+>gnl|accession=DQ393784|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1337
+>gnl|accession=DQ489717|name=Klebsiella pneumoniae|gene=intI1/IS26|host=idbi1198
+>gnl|accession=DQ519091|name=Acinetobacter baumannii|gene=intI1|host=idbi375
+>gnl|accession=DQ522234|name=Pseudomonas aeruginosa|gene=intI1|host=idbi504
+>gnl|accession=DQ522235|name=Pseudomonas aeruginosa|gene=intI1|host=idbi503
+>gnl|accession=DQ522236|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1334
+>gnl|accession=DQ522237|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1335
+>gnl|accession=DQ533990|name=Providencia stuartii|gene=intI2|host=idbi438
+>gnl|accession=DQ647028|name=Salmonella enterica subsp. enterica serovar Newport|gene=intI1|host=idbi970
+>gnl|accession=DQ663488|name=Escherichia coli|gene=intI1|host=idbi1148
+>gnl|accession=DQ836009|name=Salmonella enterica subsp. enterica serovar Stanley|gene=intI1|host=idbi1338
+>gnl|accession=DQ857723|name=Acinetobacter baumannii|gene=intI1|host=idbi1064
+>gnl|accession=DQ861641|name=Acinetobacter baumannii|gene=intI1|host=idbi1065
+>gnl|accession=DQ881442|name=Riemerella anatipestifer|gene=intI1|host=idbi114
+>gnl|accession=DQ902344|name=Klebsiella pneumoniae|gene=intI1|host=idbi400
+>gnl|accession=DQ915905|name=Escherichia coli|gene=intI1|host=idbi1226
+>gnl|accession=DQ989302|name=Enterobacter cloacae|gene=intI1|host=idbi373
+>gnl|accession=EAU13880|name=Enterobacter aerogenes plasmid pBWH301|gene=intI1|host=idbi298
+>gnl|accession=ECU36276|name=Escherichia coli|gene=intI1|host=idbi322
+>gnl|accession=EF015496|name=Acinetobacter baumannii|gene=intI1|host=idbi369
+>gnl|accession=EF015497|name=Acinetobacter genomosp. 13TU|gene=intI1|host=idbi368
+>gnl|accession=EF015499|name=Acinetobacter baumannii|gene=intI1|host=idbi366
+>gnl|accession=EF027105|name=Achromobacter xylosoxidans|gene=intI1|host=idbi1004
+>gnl|accession=EF031067|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI2|host=idbi1783
+>gnl|accession=EF051037|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi372
+>gnl|accession=EF051038|name=Salmonella enterica subsp. enterica serovar Rissen|gene=intI1|host=idbi371
+>gnl|accession=EF051039|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi370
+>gnl|accession=EF093145|name=Enterobacter aerogenes|gene=intI1|host=idbi398
+>gnl|accession=EF125010|name=Acinetobacter baumannii|gene=intI1|host=idbi477
+>gnl|accession=EF150886|name=Escherichia coli|gene=intI1|host=idbi88
+>gnl|accession=EF184215|name=Pseudomonas aeruginosa|gene=intI1|host=idbi316
+>gnl|accession=EF184216|name=Pseudomonas aeruginosa|gene=intI1|host=idbi362
+>gnl|accession=EF184217|name=Pseudomonas aeruginosa|gene=intI1|host=idbi361
+>gnl|accession=EF206349|name=Pseudomonas aeruginosa|gene=intI1|host=idbi301
+>gnl|accession=EF207717|name=Pseudomonas aeruginosa|gene=intI1|host=idbi300
+>gnl|accession=EF370423|name=Escherichia coli|gene=intI1|host=idbi363
+>gnl|accession=EF397634|name=Klebsiella pneumoniae|gene=intI2|host=idbi1024
+>gnl|accession=EF415651|name=Escherichia coli|gene=intI1|host=idbi292
+>gnl|accession=EF427691|name=Salmonella enterica subsp. enterica serovar Emek|gene=groEL/intI1|host=idbi1453
+>gnl|accession=EF450247|name=Escherichia coli plasmid pAJE0508 |gene=intI1|host=idbi286
+>gnl|accession=EF467661|name=Delftia acidovorans|gene=intI3|host=idbi2895
+>gnl|accession=EF470983|name=uncultured bacterium|gene=intI1|host=idbi269
+>gnl|accession=EF471015|name=uncultured bacterium|gene=intI1|host=idbi971
+>gnl|accession=EF522838|name=Pseudomonas putida|gene=intI1|host=idbi294
+>gnl|accession=EF543148|name=Escherichia coli|gene=intI1|host=idbi1171
+>gnl|accession=EF560797|name=Escherichia coli|gene=intI1|host=idbi319
+>gnl|accession=EF560798|name=Escherichia coli|gene=intI1|host=idbi318
+>gnl|accession=EF560799|name=Escherichia coli|gene=intI2|host=idbi317
+>gnl|accession=EF577408|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1038
+>gnl|accession=EF592570|name=Salmonella enterica subsp. enterica serovar Virchow|gene=intI1|host=idbi1052
+>gnl|accession=EF592571|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi1051
+>gnl|accession=EF614235|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1266
+>gnl|accession=EF636461|name=Klebsiella pneumoniae|gene=intI1|host=idbi1025
+>gnl|accession=EF660562|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1039
+>gnl|accession=EF660563|name=Klebsiella pneumoniae|gene=intI1|host=idbi1026
+>gnl|accession=EF690695|name=Acinetobacter baumannii|gene=intI1|host=idbi86
+>gnl|accession=EF690696|name=<i>Acinetobacter baumannii</i>|gene=<i>intI1</i>|host=idbi196
+>gnl|accession=EU006711|name=Proteus mirabilis|gene=intI1|host=idbi1032
+>gnl|accession=EU014075|name=Acinetobacter junii|gene=intI1|host=idbi315
+>gnl|accession=EU052800|name=Enterobacter cloacae|gene=intI1|host=idbi296
+>gnl|accession=EU091084|name=Enterobacter cloacae|gene=intI1|host=idbi1014
+>gnl|accession=EU116440|name=Vibrio cholerae|gene=intron|host=idbc4776
+>gnl|accession=EU116440|name=Vibrio cholerae|gene=intron|host=idbc1504
+>gnl|accession=EU118148|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1465
+>gnl|accession=EU219534|name=Salmonella enterica subsp. enterica serovar Choleraesuis|gene=intI1|host=idbc1600
+>gnl|accession=EU247928|name=Klebsiella pneumoniae IncW plasmid pIE522|gene=intI1|host=idbi1200
+>gnl|accession=EU266532|name=Enterobacter cloacae plasmid pCHE-A|gene=intI1|host=idbi2174
+>gnl|accession=EU269034|name=Klebsiella pneumoniae plasmid pRS1 |gene=intI1|host=idbi1027
+>gnl|accession=EU284133|name=Pseudomonas putida|gene=intI1|host=idbi290
+>gnl|accession=EU327987|name=Thauera sp. E7|gene=intI1|host=idbi1468
+>gnl|accession=EU327991|name=Thauera sp. B4|gene=intI1|host=idbi1467
+>gnl|accession=EU430601|name=Morganella morganii|gene=intI1|host=idbi1029
+>gnl|accession=EU430602|name=Morganella morganii|gene=intI1|host=idbi1030
+>gnl|accession=EU435306|name=uncultured bacterium|gene=intI1|host=idbi231
+>gnl|accession=EU435308|name=uncultured bacterium|gene=intI1|host=idbi229
+>gnl|accession=EU435310|name=uncultured bacterium|gene=intI1|host=idbi227
+>gnl|accession=EU435311|name=uncultured bacterium|gene=intI1|host=idbi226
+>gnl|accession=EU436855|name=Vibrio cholerae|gene=intI1|host=idbi239
+>gnl|accession=EU487199|name=Escherichia sp. Sam130-5B|gene=intI1|host=idbi979
+>gnl|accession=EU495238|name=Kluyvera ascorbata plasmid pKas96|gene=intI1|host=idbi2374
+>gnl|accession=EU523063|name=Acinetobacter seohaensis|gene=intI2|host=idbi271
+>gnl|accession=EU523064|name=Acinetobacter seohaensis|gene=intI1|host=idbi270
+>gnl|accession=EU531474|name=uncultured bacterium|gene=intI1|host=idbi2132
+>gnl|accession=EU531475|name=uncultured bacterium|gene=intI1|host=idbi2133
+>gnl|accession=EU531476|name=uncultured bacterium|gene=intI1|host=idbi2134
+>gnl|accession=EU531477|name=uncultured bacterium|gene=intI1|host=idbi2135
+>gnl|accession=EU531478|name=uncultured bacterium|gene=intI1|host=idbi2136
+>gnl|accession=EU531479|name=uncultured bacterium|gene=intI1|host=idbi2137
+>gnl|accession=EU531480|name=uncultured bacterium|gene=intI1|host=idbi2138
+>gnl|accession=EU531482|name=uncultured bacterium|gene=intI1|host=idbi2140
+>gnl|accession=EU531483|name=uncultured bacterium|gene=intI1|host=idbi2141
+>gnl|accession=EU531484|name=uncultured bacterium|gene=intI1|host=idbi2142
+>gnl|accession=EU531485|name=uncultured bacterium|gene=intI1|host=idbi2143
+>gnl|accession=EU531486|name=uncultured bacterium|gene=intI1|host=idbi2144
+>gnl|accession=EU531487|name=uncultured bacterium|gene=intI1|host=idbi2145
+>gnl|accession=EU531488|name=uncultured bacterium|gene=intI1|host=idbi2146
+>gnl|accession=EU531489|name=uncultured bacterium|gene=intI1|host=idbi2147
+>gnl|accession=EU531493|name=uncultured bacterium|gene=intI1|host=idbi2151
+>gnl|accession=EU531494|name=uncultured bacterium|gene=intI1|host=idbi2152
+>gnl|accession=EU531496|name=uncultured bacterium|gene=intI1|host=idbi2154
+>gnl|accession=EU531497|name=uncultured bacterium|gene=intI1|host=idbi2155
+>gnl|accession=EU597467|name=Klebsiella pneumoniae plasmid p17500|gene=intI1|host=idbi1008
+>gnl|accession=EU598463|name=Pseudomonas aeruginosa|gene=intI1|host=idbi241
+>gnl|accession=EU622037|name=Klebsiella pneumoniae plasmid p0106|gene=intI1|host=idbi223
+>gnl|accession=EU622038|name=Klebsiella pneumoniae plasmid p1206|gene=intI1|host=idbi222
+>gnl|accession=EU622039|name=Klebsiella pneumoniae plasmid p1806|gene=intI1|host=idbi220
+>gnl|accession=EU622040|name=Klebsiella pneumoniae plasmid p2400|gene=intI1|host=idbi243
+>gnl|accession=EU622041|name=Klebsiella pneumoniae plasmid p4800|gene=intI1|host=idbi242
+>gnl|accession=EU622856|name=Klebsiella pneumoniae plasmid p0506|gene=intI1|host=idbi1028
+>gnl|accession=EU664604|name=Salmonella enterica subsp. enterica serovar Kentucky|gene=intI1delta|host=idbi1351
+>gnl|accession=EU664605|name=Salmonella enterica subsp. enterica serovar Kentucky|gene=intI1delta|host=idbi1813
+>gnl|accession=EU664609|name=Salmonella enterica subsp. enterica serovar Kentucky|gene=intI1delta|host=idbi2156
+>gnl|accession=EU675686|name=Escherichia coli|gene=intI1|host=idbi1018
+>gnl|accession=EU687490|name=Escherichia coli|gene=intI1|host=idbi984
+>gnl|accession=EU715254|name=Salmonella enterica subsp. enterica serovar Enteritidis|gene=intI1|host=idbi221
+>gnl|accession=EU722351|name=Klebsiella pneumoniae plasmid pGDKA1|gene=intI1|host=idbi2461
+>gnl|accession=EU732664|name=Shigella sonnei|gene=intI2|host=idbi215
+>gnl|accession=EU746497|name=Pseudomonas aeruginosa|gene=intI1|host=idbi980
+>gnl|accession=EU746498|name=Pseudomonas aeruginosa|gene=intI1|host=idbi982
+>gnl|accession=EU746499|name=Pseudomonas aeruginosa|gene=intI1|host=idbi981
+>gnl|accession=EU780012|name=Escherichia coli|gene=intI2|host=idbi1567
+>gnl|accession=EU834941|name=Salmonella enterica subsp. enterica serovar Choleraesuis|gene=intI1|host=idbi1294
+>gnl|accession=EU851865|name=Proteus mirabilis|gene=intI1|host=idbi1487
+>gnl|accession=EU855787|name=Enterobacter cloacae|gene=intI1|host=idbi2124
+>gnl|accession=EU860402|name=Proteus mirabilis|gene=intI1|host=idbi1262
+>gnl|accession=EU886977|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1276
+>gnl|accession=EU886978|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1277
+>gnl|accession=EU886979|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1278
+>gnl|accession=EU886980|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1275
+>gnl|accession=EU912537|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1555
+>gnl|accession=EU924797|name=Salmonella enterica subsp. enterica serovar Virchow|gene=intI1|host=idbi1421
+>gnl|accession=EU930720|name=Klebsiella pneumoniae|gene=intI1|host=idbi1280
+>gnl|accession=FJ160769|name=Escherichia coli|gene=intI1|host=idbi1498
+>gnl|accession=FJ167861|name=Enterobacter aerogenes plasmid pYS10 |gene=groEL/intI1|host=idbc4867
+>gnl|accession=FJ167861|name=Enterobacter aerogenes plasmid pYS10 |gene=intI1|host=idbi1499
+>gnl|accession=FJ172674|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1814
+>gnl|accession=FJ172675|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1815
+>gnl|accession=FJ172676|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1816
+>gnl|accession=FJ183463|name=Escherichia coli|gene=intI1|host=idbi1358
+>gnl|accession=FJ196385|name=Escherichia coli|gene=intI1|host=idbi1633
+>gnl|accession=FJ207466|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1282
+>gnl|accession=FJ215857|name=Escherichia coli|gene=intI1|host=idbi1281
+>gnl|accession=FJ237530|name=Pseudomonas putida|gene=intI1|host=idbi1562
+>gnl|accession=FJ266018|name=Citrobacter freundii|gene=intI1|host=idbi1561
+>gnl|accession=FJ377584|name=uncultured microorganism|gene=intI|host=idbi2220
+>gnl|accession=FJ377585|name=uncultured microorganism|gene=intI|host=idbi2225
+>gnl|accession=FJ377586|name=uncultured microorganism|gene=intI1|host=idbi2219
+>gnl|accession=FJ377587|name=uncultured microorganism|gene=intI|host=idbi2218
+>gnl|accession=FJ377588|name=uncultured microorganism|gene=intI|host=idbi2224
+>gnl|accession=FJ377589|name=uncultured microorganism|gene=intI|host=idbi2217
+>gnl|accession=FJ377590|name=uncultured microorganism|gene=intI|host=idbi2216
+>gnl|accession=FJ377591|name=uncultured microorganism|gene=intI|host=idbi2223
+>gnl|accession=FJ377592|name=uncultured microorganism|gene=intI|host=idbi2222
+>gnl|accession=FJ377593|name=uncultured microorganism|gene=intI|host=idbi2221
+>gnl|accession=FJ377594|name=uncultured microorganism|gene=intI|host=idbi2215
+>gnl|accession=FJ377595|name=uncultured microorganism|gene=intI|host=idbi2214
+>gnl|accession=FJ377596|name=uncultured microorganism|gene=intI|host=idbi2213
+>gnl|accession=FJ377597|name=uncultured microorganism|gene=intI|host=idbi2212
+>gnl|accession=FJ377598|name=uncultured microorganism|gene=intI|host=idbi2211
+>gnl|accession=FJ377599|name=uncultured microorganism|gene=intI|host=idbi2210
+>gnl|accession=FJ377600|name=uncultured microorganism|gene=intI|host=idbi2209
+>gnl|accession=FJ377601|name=uncultured microorganism|gene=intI|host=idbi2208
+>gnl|accession=FJ377602|name=uncultured microorganism|gene=intI|host=idbi2207
+>gnl|accession=FJ377603|name=uncultured microorganism|gene=intI|host=idbi2206
+>gnl|accession=FJ377604|name=uncultured microorganism|gene=intI|host=idbi2205
+>gnl|accession=FJ377605|name=uncultured microorganism|gene=intI|host=idbi2204
+>gnl|accession=FJ377606|name=uncultured microorganism|gene=intI|host=idbi2203
+>gnl|accession=FJ377607|name=uncultured microorganism|gene=intI|host=idbi2202
+>gnl|accession=FJ377608|name=uncultured microorganism|gene=intI|host=idbi2201
+>gnl|accession=FJ377609|name=uncultured microorganism|gene=intI|host=idbi2200
+>gnl|accession=FJ377610|name=uncultured microorganism|gene=intI|host=idbi2199
+>gnl|accession=FJ377611|name=uncultured microorganism|gene=intI|host=idbi2198
+>gnl|accession=FJ377612|name=uncultured microorganism|gene=intI|host=idbi2190
+>gnl|accession=FJ377613|name=uncultured microorganism|gene=intI|host=idbi2189
+>gnl|accession=FJ377614|name=uncultured microorganism|gene=intI|host=idbi2188
+>gnl|accession=FJ384365|name=Klebsiella pneumoniae plasmid pIMP-4|gene=intI1|host=idbi1792
+>gnl|accession=FJ457611|name=Arthrobacter arilaitensis|gene=intI1|host=idbi1618
+>gnl|accession=FJ502340|name=Neisseria sp. GRW28|gene=intI1|host=idbi2119
+>gnl|accession=FJ502341|name=Neisseria sp. GSR70|gene=intI1|host=idbi2118
+>gnl|accession=FJ502342|name=Neisseria sp. GRW38|gene=intI2|host=idbi2117
+>gnl|accession=FJ502343|name=Neisseria sp. GRW59|gene=intI2|host=idbi2116
+>gnl|accession=FJ529220|name=Vibrio tasmaniensis|gene=intIA|host=idbi1864
+>gnl|accession=FJ529221|name=Vibrio splendidus|gene=intIA|host=idbi1863
+>gnl|accession=FJ573247|name=Acinetobacter baumannii|gene=intI1|host=idbi1853
+>gnl|accession=FJ587511|name=Escherichia coli|gene=intI1|host=idbi1868
+>gnl|accession=FJ594416|name=Pseudomonas mendocina|gene=intI1|host=idbi1842
+>gnl|accession=FJ594765|name=Salmonella enterica subsp. enterica serovar Derby|gene=intI1|host=idbi1839
+>gnl|accession=FJ594766|name=Klebsiella pneumoniae|gene=intI1|host=idbi1838
+>gnl|accession=FJ594767|name=Escherichia coli|gene=intI1|host=idbi1837
+>gnl|accession=FJ615774|name=uncultured bacterium|gene=intI|host=idbi1911
+>gnl|accession=FJ615776|name=uncultured bacterium|gene=intI2|host=idbi1913
+>gnl|accession=FJ615777|name=uncultured bacterium|gene=intI|host=idbi1914
+>gnl|accession=FJ615778|name=uncultured bacterium|gene=intI|host=idbi1934
+>gnl|accession=FJ615779|name=uncultured bacterium|gene=intI|host=idbi1933
+>gnl|accession=FJ615780|name=uncultured bacterium|gene=intI|host=idbi1932
+>gnl|accession=FJ615781|name=uncultured bacterium|gene=intI|host=idbi1931
+>gnl|accession=FJ615782|name=uncultured bacterium|gene=intI|host=idbi1930
+>gnl|accession=FJ615783|name=uncultured bacterium|gene=intI|host=idbi1929
+>gnl|accession=FJ615784|name=uncultured bacterium|gene=intI|host=idbi1928
+>gnl|accession=FJ615785|name=uncultured bacterium|gene=intI2|host=idbi1927
+>gnl|accession=FJ615786|name=uncultured bacterium|gene=intI|host=idbi1926
+>gnl|accession=FJ615787|name=uncultured bacterium|gene=intI|host=idbi1925
+>gnl|accession=FJ615788|name=uncultured bacterium|gene=intI|host=idbi1924
+>gnl|accession=FJ615789|name=uncultured bacterium|gene=intI2|host=idbi1923
+>gnl|accession=FJ615790|name=uncultured bacterium|gene=intI|host=idbi1922
+>gnl|accession=FJ615791|name=uncultured bacterium|gene=intI2|host=idbi1921
+>gnl|accession=FJ615792|name=uncultured bacterium|gene=intI|host=idbi1920
+>gnl|accession=FJ615793|name=uncultured bacterium|gene=intI2|host=idbi1919
+>gnl|accession=FJ615794|name=uncultured bacterium|gene=intI2|host=idbi1918
+>gnl|accession=FJ615795|name=uncultured bacterium|gene=intI|host=idbi1917
+>gnl|accession=FJ615796|name=uncultured bacterium|gene=intI|host=idbi1916
+>gnl|accession=FJ615797|name=uncultured bacterium|gene=intI|host=idbi1915
+>gnl|accession=FJ615798|name=uncultured bacterium|gene=intI|host=idbi1910
+>gnl|accession=FJ615799|name=uncultured bacterium|gene=intI|host=idbi1909
+>gnl|accession=FJ615800|name=uncultured bacterium|gene=intI|host=idbi1908
+>gnl|accession=FJ615801|name=uncultured bacterium|gene=intI|host=idbi1907
+>gnl|accession=FJ615802|name=uncultured bacterium|gene=intI|host=idbi1906
+>gnl|accession=FJ615803|name=uncultured bacterium|gene=intI|host=idbi1905
+>gnl|accession=FJ615804|name=uncultured bacterium|gene=intI|host=idbi1904
+>gnl|accession=FJ615805|name=uncultured bacterium|gene=intI|host=idbi1903
+>gnl|accession=FJ615806|name=uncultured bacterium|gene=intI|host=idbi1902
+>gnl|accession=FJ615807|name=uncultured bacterium|gene=intI|host=idbi1901
+>gnl|accession=FJ615808|name=uncultured bacterium|gene=intI|host=idbi1900
+>gnl|accession=FJ615809|name=uncultured bacterium|gene=intI|host=idbi1899
+>gnl|accession=FJ615810|name=uncultured bacterium|gene=intI|host=idbi1898
+>gnl|accession=FJ615811|name=uncultured bacterium|gene=intI|host=idbi1897
+>gnl|accession=FJ615812|name=uncultured bacterium|gene=intI|host=idbi1896
+>gnl|accession=FJ615813|name=uncultured bacterium|gene=intI|host=idbi1895
+>gnl|accession=FJ615814|name=uncultured bacterium|gene=intI|host=idbi1894
+>gnl|accession=FJ615815|name=uncultured bacterium|gene=intI|host=idbi1893
+>gnl|accession=FJ615816|name=uncultured bacterium|gene=intI|host=idbi1892
+>gnl|accession=FJ615817|name=uncultured bacterium|gene=intI|host=idbi1891
+>gnl|accession=FJ615818|name=uncultured bacterium|gene=intI|host=idbi1890
+>gnl|accession=FJ615819|name=uncultured bacterium|gene=intI|host=idbi1889
+>gnl|accession=FJ615820|name=uncultured bacterium|gene=intI|host=idbi1888
+>gnl|accession=FJ615821|name=uncultured bacterium|gene=intI|host=idbi1887
+>gnl|accession=FJ615822|name=uncultured bacterium|gene=intI|host=idbi1886
+>gnl|accession=FJ615823|name=uncultured bacterium|gene=intI|host=idbi1885
+>gnl|accession=FJ615824|name=uncultured bacterium|gene=intI|host=idbi1884
+>gnl|accession=FJ615825|name=uncultured bacterium|gene=intI|host=idbi1883
+>gnl|accession=FJ615826|name=uncultured bacterium|gene=intI|host=idbi1882
+>gnl|accession=FJ615827|name=uncultured bacterium|gene=intI|host=idbi1881
+>gnl|accession=FJ615828|name=uncultured bacterium|gene=intI|host=idbi1880
+>gnl|accession=FJ615829|name=uncultured bacterium|gene=intI|host=idbi1879
+>gnl|accession=FJ663009|name=uncultured bacterium|gene=intI1|host=idbi2679
+>gnl|accession=FJ663010|name=uncultured bacterium|gene=intI1|host=idbi2680
+>gnl|accession=FJ663011|name=uncultured bacterium|gene=intI1|host=idbi2681
+>gnl|accession=FJ663012|name=uncultured bacterium|gene=intI1|host=idbi2682
+>gnl|accession=FJ663013|name=uncultured bacterium|gene=intI1|host=idbi2683
+>gnl|accession=FJ711658|name=Riemerella anatipestifer|gene=intI1|host=idbc7175
+>gnl|accession=FJ715943|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2372
+>gnl|accession=FJ715944|name=Pseudomonas aeruginosa |gene=intI1|host=idbi2316
+>gnl|accession=FJ752628|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2045
+>gnl|accession=FJ753285|name=Enterococcus faecalis|gene=intI1|host=idbi2102
+>gnl|accession=FJ785524|name=Acinetobacter baumannii|gene=intI2|host=idbi2063
+>gnl|accession=FJ790516|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2052
+>gnl|accession=FJ790886|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=intI1|host=idbi2363
+>gnl|accession=FJ797422|name=Xanthomonas translucens pv. pistacia|gene=intI|host=idbi2069
+>gnl|accession=FJ797423|name=Xanthomonas translucens pv. pistacia|gene=intI|host=idbi2070
+>gnl|accession=FJ797424|name=Xanthomonas translucens pv. translucens|gene=intI|host=idbi2071
+>gnl|accession=FJ820119|name=uncultured bacterium|gene=intI1|host=idbi2310
+>gnl|accession=FJ820120|name=uncultured bacterium|gene=intI1|host=idbi2309
+>gnl|accession=FJ820121|name=uncultured bacterium|gene=intI1|host=idbi2308
+>gnl|accession=FJ820122|name=uncultured bacterium|gene=intI1|host=idbi2307
+>gnl|accession=FJ820123|name=uncultured bacterium|gene=intI1|host=idbi2306
+>gnl|accession=FJ820124|name=uncultured bacterium|gene=intI1|host=idbi2305
+>gnl|accession=FJ820125|name=uncultured bacterium|gene=intI1|host=idbi2304
+>gnl|accession=FJ820127|name=uncultured bacterium|gene=intI1|host=idbi2302
+>gnl|accession=FJ820128|name=uncultured bacterium|gene=intI1|host=idbi2301
+>gnl|accession=FJ820131|name=uncultured bacterium|gene=intI1|host=idbi2298
+>gnl|accession=FJ820132|name=uncultured bacterium|gene=intI1|host=idbi2297
+>gnl|accession=FJ820133|name=uncultured bacterium|gene=intI1|host=idbi2296
+>gnl|accession=FJ820134|name=uncultured bacterium|gene=intI1|host=idbi2295
+>gnl|accession=FJ820135|name=uncultured bacterium|gene=intI1|host=idbi2294
+>gnl|accession=FJ820136|name=uncultured bacterium|gene=intI1|host=idbi2293
+>gnl|accession=FJ820137|name=uncultured bacterium|gene=intI1|host=idbi2292
+>gnl|accession=FJ820138|name=uncultured bacterium|gene=intI1|host=idbi2291
+>gnl|accession=FJ820139|name=uncultured bacterium|gene=intI1|host=idbi2290
+>gnl|accession=FJ820141|name=uncultured bacterium|gene=intI1|host=idbi2288
+>gnl|accession=FJ820142|name=uncultured bacterium|gene=intI1|host=idbi2287
+>gnl|accession=FJ820143|name=uncultured bacterium|gene=intI1|host=idbi2286
+>gnl|accession=FJ820144|name=uncultured bacterium|gene=intI1|host=idbi2285
+>gnl|accession=FJ820146|name=uncultured bacterium|gene=intI1|host=idbi2283
+>gnl|accession=FJ820147|name=uncultured bacterium|gene=intI1|host=idbi2282
+>gnl|accession=FJ820148|name=uncultured bacterium|gene=intI1|host=idbi2281
+>gnl|accession=FJ820149|name=uncultured bacterium|gene=intI1|host=idbi2280
+>gnl|accession=FJ820150|name=uncultured bacterium|gene=intI1|host=idbi2279
+>gnl|accession=FJ820151|name=uncultured bacterium|gene=intI1|host=idbi2278
+>gnl|accession=FJ820152|name=uncultured bacterium|gene=intI1|host=idbi2311
+>gnl|accession=FJ820153|name=uncultured bacterium|gene=intI1|host=idbi2312
+>gnl|accession=FJ820155|name=uncultured bacterium|gene=intI1|host=idbi2277
+>gnl|accession=FJ820157|name=uncultured bacterium|gene=intI1|host=idbi2275
+>gnl|accession=FJ820159|name=uncultured bacterium|gene=intI1|host=idbi2273
+>gnl|accession=FJ820160|name=uncultured bacterium|gene=intI1|host=idbi2272
+>gnl|accession=FJ820162|name=uncultured bacterium|gene=intI1|host=idbi2269
+>gnl|accession=FJ848783|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2229
+>gnl|accession=FJ854362|name=Acinetobacter baumannii|gene=intI1|host=idbi2314
+>gnl|accession=FJ906752|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2104
+>gnl|accession=FJ943244|name=Klebsiella pneumoniae plasmid pKP1334/05-1|gene=intI1|host=idbi2110
+>gnl|accession=FM165436|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1040
+>gnl|accession=FM179328|name=uncultured bacterium|gene=intI1|host=idbi975
+>gnl|accession=FM179465|name=Pseudomonas aeruginosa|gene=intI1|host=idbi211
+>gnl|accession=FM179467|name=Pseudomonas putida|gene=intI1|host=idbi209
+>gnl|accession=FM866473|name=uncultured bacterium|gene=intI|host=idbi1747
+>gnl|accession=FM866474|name=uncultured bacterium|gene=intI|host=idbi1748
+>gnl|accession=FM866479|name=uncultured bacterium|gene=intI|host=idbi1753
+>gnl|accession=FM866480|name=uncultured bacterium|gene=intI|host=idbi1754
+>gnl|accession=FM866483|name=uncultured bacterium|gene=intI|host=idbi1757
+>gnl|accession=FM866486|name=uncultured bacterium|gene=intI|host=idbi1760
+>gnl|accession=FM866487|name=uncultured bacterium|gene=intI|host=idbi1761
+>gnl|accession=FM866489|name=uncultured bacterium|gene=intI|host=idbi1763
+>gnl|accession=FM866491|name=uncultured bacterium|gene=intI|host=idbi1765
+>gnl|accession=FM866498|name=uncultured bacterium|gene=intI|host=idbi1772
+>gnl|accession=FM866499|name=uncultured bacterium|gene=intI|host=idbi1773
+>gnl|accession=FM994936|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1840
+>gnl|accession=FN396877|name=Klebsiella pneumoniae|gene=intI1|host=idbi2336
+>gnl|accession=FN397623|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2268
+>gnl|accession=FN397624|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2164
+>gnl|accession=FN397628|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2160
+>gnl|accession=FN556190|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2684
+>gnl|accession=FN825254|name=Corynebacterium resistens plasmid pJA144188|gene=intI1|host=idbi2471
+>gnl|accession=FQ482074|name=Escherichia coli plasmid pETN48|gene=intIdelta1|host=idbi2903
+>gnl|accession=FR748150|name=Klebsiella pneumoniae|gene=intI1|host=idbi2740
+>gnl|accession=FR748151|name=Klebsiella pneumoniae|gene=intI1|host=idbi2739
+>gnl|accession=FR748152|name=Klebsiella pneumoniae|gene=intI1|host=idbi2738
+>gnl|accession=FR822749|name=<i>Corynebacterium diphtheriae</i>|gene=<i>intI1</i>|host=idbi2798
+>gnl|accession=FR851303|name=<i>Escherichia coli</i>|gene=<i>intI1</i> (truncated)|host=idbi2823
+>gnl|accession=GQ139471|name=Klebsiella pneumoniae subsp. ozaenae|gene=intI1|host=idbi2172
+>gnl|accession=GQ144317|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2236
+>gnl|accession=GQ152139|name=Vibrio fluvialis|gene=intI1|host=idbi2581
+>gnl|accession=GQ152140|name=Vibrio fluvialis|gene=intI1|host=idbi2264
+>gnl|accession=GQ161094|name=uncultured bacterium|gene=intI2|host=idbi2263
+>gnl|accession=GQ214169|name=Vibrio cholerae|gene=intI1|host=idbi2323
+>gnl|accession=GQ214170|name=Vibrio cholerae|gene=intI1|host=idbi2322
+>gnl|accession=GQ214171|name=Vibrio cholerae|gene=intI1|host=idbi2321
+>gnl|accession=GQ422827|name=Klebsiella pneumoniae|gene=intI1|host=idbi2366
+>gnl|accession=GQ856541|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2428
+>gnl|accession=GQ900749|name=Escherichia coli|gene=intI1|host=idbi2380
+>gnl|accession=GU165830|name=Serratia rubidaea plasmid pLC108|gene=intI1|host=idbi2714
+>gnl|accession=GU165831|name=Providencia rettgeri plasmid pLC134|gene=intI1|host=idbi2713
+>gnl|accession=GU181265|name=Klebsiella pneumoniae|gene=int1|host=idbi2449
+>gnl|accession=GU295656|name=Aeromonas hydrophila|gene=intI1|host=idbi2527
+>gnl|accession=GU354325|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2607
+>gnl|accession=GU390399|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2750
+>gnl|accession=GU390400|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2749
+>gnl|accession=GU390401|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2748
+>gnl|accession=GU390402|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2747
+>gnl|accession=GU475053|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2561
+>gnl|accession=GU724868|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2457
+>gnl|accession=GU724869|name=Providencia stuartii|gene=intI1|host=idbi2456
+>gnl|accession=GU724870|name=Proteus mirabilis|gene=intI1|host=idbi2455
+>gnl|accession=GU724871|name=Escherichia coli|gene=intI1|host=idbi2454
+>gnl|accession=GU724872|name=Klebsiella pneumoniae|gene=intI1|host=idbi2453
+>gnl|accession=GU731077|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2549
+>gnl|accession=GU731078|name=Escherichia coli|gene=intI1|host=idbi2550
+>gnl|accession=GU830872|name=Salmonella enterica subsp. enterica serovar Typhimurium|gene=groEL/intI1|host=idbi2538
+>gnl|accession=GU906294|name=Klebsiella pneumoniae|gene=intI1|host=idbi2553
+>gnl|accession=HE613853|name=<i>Klebsiella pneumoniae</i>|gene=<i>intI1</i>|host=idbi2794
+>gnl|accession=HE616889|name=<i>Enterobacter cloacae</i>|gene=<i>intI3</i>|host=idbi2785
+>gnl|accession=HM021184|name=Pseudomonas aeruginosa|gene=intI1|host=idbi2470
+>gnl|accession=HM043575|name=Klebsiella pneumoniae IncN plasmid |gene=intI2|host=idbi2587
+>gnl|accession=HM167967|name=Vibrio sp. V1(2010)|gene=intIA|host=idbi2636
+>gnl|accession=HM167968|name=Vibrio sp. V2(2010)|gene=intIA|host=idbi2637
+>gnl|accession=HM167969|name=Vibrio sp. V3(2010)|gene=intIA|host=idbi2638
+>gnl|accession=HM167970|name=Vibrio sp. V4(2010)|gene=intIA|host=idbi2639
+>gnl|accession=HM167971|name=Vibrio sp. V37(2010)|gene=intIA|host=idbi2640
+>gnl|accession=HM167972|name=Vibrio sp. V48(2010)|gene=intIA|host=idbi2641
+>gnl|accession=HM167973|name=Vibrio sp. V49(2010)|gene=intIA|host=idbi2642
+>gnl|accession=HM167974|name=Vibrio sp. V82(2010)|gene=intIA|host=idbi2643
+>gnl|accession=HM167975|name=Vibrio sp. V84(2010)|gene=intIA|host=idbi2644
+>gnl|accession=HM167976|name=Vibrio sp. V87(2010)|gene=intIA|host=idbi2645
+>gnl|accession=HM167977|name=Vibrio sp. V89(2010)|gene=intIA|host=idbi2646
+>gnl|accession=HM167978|name=Vibrio sp. V90(2010)|gene=intIA|host=idbi2647
+>gnl|accession=HM167979|name=Vibrio sp. V91(2010)|gene=intIA|host=idbi2648
+>gnl|accession=HM167980|name=Vibrio sp. V92(2010)|gene=intIA|host=idbi2649
+>gnl|accession=HM167981|name=Vibrio sp. V95(2010)|gene=intIA|host=idbi2650
+>gnl|accession=HM167982|name=Vibrio sp. V96(2010)|gene=intIA|host=idbi2651
+>gnl|accession=HM439239|name=Escherichia coli|gene=intI2|host=idbi2710
+>gnl|accession=HM589045|name=Klebsiella pneumoniae|gene=intI1|host=idbi2712
+>gnl|accession=HQ170512|name=Aeromonas caviae|gene=intI1|host=idbi2960
+>gnl|accession=HQ170516|name=Aeromonas media|gene=intI1|host=idbc9604
+>gnl|accession=JF414726|name=<i>Pseudomonas aeruginosa</i>|gene=<i>intI1</i> partial|host=idbi2819
+>gnl|accession=JF414727|name=<i>Pseudomonas aeruginosa</i>|gene=<i>intI1</i> partial|host=idbi2820
+>gnl|accession=JF731030|name=<i>Acinetobacter baylyi</i>|gene=<i>intI1</i>|host=idbi2806
+>gnl|accession=JN106164|name=uncultured bacterium|gene=<i>intI1</i>|host=idbi2786
+>gnl|accession=JN121384|name=<i>Acinetobacter baumannii</i>|gene=<i>intI1</i> (partial)|host=idbi2804
+>gnl|accession=JN193568|name=<i>Providencia stuartii</i>|gene=<i>intI1</i>|host=idbi2797
+>gnl|accession=JN253504|name=<i>Acinetobacter baumannii</i>|gene=<i>intI1</i> (partial)|host=idbi2803
+>gnl|accession=JN415765|name=<i>Acinetobacter baumannii</i>|gene=<i>intI1</i>|host=idbi2801
+>gnl|accession=JN596991|name=<i>Pseudomonas aeruginosa</i>|gene=<i>intI1</i>|host=idbi2782
+>gnl|accession=JN837683|name=Kluyvera cryocrescens|gene=intI1|host=idbi2868
+>gnl|accession=JQ004408|name=IncP-1epsilon Plasmid pHH3414|gene=<i>intI1delta</i> (truncated)|host=idbi2840
+>gnl|accession=JQ004409|name=IncP-1epsilon Plasmid pKS77|gene=<i>intI1delta</i> (truncated)|host=idbi2841
+>gnl|accession=JQ326974|name=Escherichia coli|gene=intI1|host=idbi2998
+>gnl|accession=JQ326977|name=Escherichia coli|gene=intI1|host=idbi2999
+>gnl|accession=JQ326978|name=Escherichia coli|gene=intI1|host=idbi3000
+>gnl|accession=JQ837985|name=Aeromonas sp. C37|gene=intI1|host=idbi2935
+>gnl|accession=JQ837986|name=Aeromonas hydrophila|gene=intI1|host=idbi2934
+>gnl|accession=JQ837987|name=Aeromonas hydrophila|gene=intI1|host=idbi2933
+>gnl|accession=JQ837989|name=Pseudomonas sp. C77|gene=intI1|host=idbi2931
+>gnl|accession=JQ837990|name=Escherichia coli|gene=intI1|host=idbi2930
+>gnl|accession=JQ837993|name=Aeromonas hydrophila|gene=intI1|host=idbi2927
+>gnl|accession=JQ837994|name=Escherichia coli|gene=intI1|host=idbi2926
+>gnl|accession=JQ837995|name=Aeromonas sp. C69|gene=intI1|host=idbi2925
+>gnl|accession=JQ837997|name=Aeromonas sp. C82|gene=intI1|host=idbi2923
+>gnl|accession=JQ837998|name=Escherichia coli|gene=intI1|host=idbi2922
+>gnl|accession=JQ837999|name=Escherichia coli|gene=intI1|host=idbi2918
+>gnl|accession=JQ838000|name=Aeromonas hydrophila|gene=intI1|host=idbi2921
+>gnl|accession=JQ838001|name=Aeromonas hydrophila|gene=intI1|host=idbi2919
+>gnl|accession=JX448550|name=Achromobacter xylosoxidans|gene=groEL/intI1|host=idbi3299
+>gnl|accession=JX469826|name=IncP-1beta plasmid pB12|gene=intI1|host=idbi2882
+>gnl|accession=JX469830|name=IncP-1 plasmid pG527|gene=intI2|host=idbi2883
+>gnl|accession=JX486125|name=uncultured bacterium|gene=<i>intI1</i>|host=idbi2937
+>gnl|accession=JX566770|name=<i>Salmonella enterica</i> subsp. <i>enterica</i> serovar Derby|gene=<i>intI1</i>|host=idbi2904
+>gnl|accession=JX867126|name=Proteus vulgaris|gene=intI2|host=idbi2961
+>gnl|accession=KF032820|name=<i>Achromobacter xylosoxidans</i>|gene=intI1|host=idbi3290
+>gnl|accession=KF032821|name=<i>Achromobacter xylosoxidans</i>|gene=intI1|host=idbi3291
+>gnl|accession=KF032822|name=<i>Achromobacter xylosoxidans</i>|gene=intI1|host=idbi3292
+>gnl|accession=KF921520|name=<i>Escherichia coli</i>|gene=intI1|host=idbi2987
+>gnl|accession=KF921524|name=<i>Escherichia coli</i>|gene=intI1|host=idbi2991
+>gnl|accession=KF921525|name=<i>Escherichia coli</i>|gene=intI1|host=idbi2992
+>gnl|accession=KJ131499|name=Acinetobacter baumannii|gene=ΔintI1|host=idbc9693
+>gnl|accession=NC_007404|name=Thiobacillus denitrificans ATCC 25259|gene=intI|host=idbi1871
+>gnl|accession=NC_007517|name=Geobacter metallireducens GS-15|gene=intI|host=idbi2075
+>gnl|accession=NC_007517|name=Geobacter metallireducens GS-15|gene=intI|host=idbi2076
+>gnl|accession=NC_007575|name=Sulfurimonas denitrificans DSM 1251|gene=intI|host=idbi1870
+>gnl|accession=NC_007677|name=Salinibacter ruber  DSM 13855|gene=intI|host=idbi1629
+>gnl|accession=NC_007947|name=Methylobacillus flagellatus KT|gene=intI|host=idbi2077
+>gnl|accession=NC_008228|name=Pseudoalteromonas atlantica T6c|gene=intI|host=idbi2043
+>gnl|accession=NC_008322|name=Shewanella sp. MR-7|gene=intI|host=idbi2120
+>gnl|accession=NC_008639|name=Chlorobium phaeobacteroides DSM 266|gene=intI|host=idbi1824
+>gnl|accession=NC_008702|name=Azoarcus sp. BH72|gene=intI1delta|host=idbi2564
+>gnl|accession=NC_008709|name=Psychromonas ingrahamii 37|gene=intI|host=idbi2228
+>gnl|accession=NC_009128|name=Corynebacterium sp. L2-79-05 plasmid pLEW279a|gene=intI1|host=idbc8550
+>gnl|accession=NC_009483|name=Geobacter uraniireducens Rf4|gene=intI|host=idbi2346
+>gnl|accession=NC_009523|name=Roseiflexus sp. RS-1|gene=intI|host=idbi2230
+>gnl|accession=NC_009665|name=Shewanella baltica OS185|gene=intI|host=idbi2192
+>gnl|accession=NC_009665|name=Shewanella baltica OS185|gene=intI|host=idbi2193
+>gnl|accession=NC_009767|name=Roseiflexus castenholzii DSM 13941|gene=intI|host=idbi1974
+>gnl|accession=NC_009901|name=Shewanella pealeana ATCC 700345|gene=intI|host=idbi2227
+>gnl|accession=NC_010334|name=Shewanella halifaxensis HAW-EB4|gene=intI|host=idbi2030
+>gnl|accession=NC_010524|name=Leptothrix cholodnii SP-6|gene=intI|host=idbi2226
+>gnl|accession=NC_010831|name=Chlorobium phaeobacteroides BS1|gene=intI|host=idbc6917
+>gnl|accession=NC_011026|name=Chloroherpeton thalassium|gene=intI|host=idbi1095
+>gnl|accession=NC_011901|name=Thioalkalivibrio sp. HL-EbGR7|gene=intI|host=idbi1823
+>gnl|accession=NC_011992|name=Diaphorobacter sp. TPSY|gene=intI|host=idbi2736
+>gnl|accession=NC_012583|name=Vibrio cholerae O395|gene=int|host=idbi2073
+>gnl|accession=NC_012667|name=Vibrio cholerae MJ-1236|gene=intI4|host=idbi2358
+>gnl|accession=NC_012668|name=Vibrio cholerae MJ-1236|gene=intI9|host=idbi2356
+>gnl|accession=NC_012968|name=Methylotenera mobilis JLW8|gene=intI|host=idbi2324
+>gnl|accession=NC_013951|name=Klebsiella pneumoniae plasmid pKF3-140|gene=intI1|host=idbi2566
+>gnl|accession=NC_013959|name=Sideroxydans lithotrophicus ES-1|gene=intI|host=idbi2567
+>gnl|accession=NC_014008|name=Coraliomargarita akajimensis DSM 45221|gene=intI|host=idbi2554
+>gnl|accession=NC_014008|name=Coraliomargarita akajimensis DSM 45221|gene=intI|host=idbi2555
+>gnl|accession=NC_014207|name=Methylotenera sp. 301|gene=intI|host=idbi2600
+>gnl|accession=NC_014216|name=Desulfurivibrio alkaliphilus AHT2|gene=intI|host=idbi2601
+>gnl|accession=NC_014366|name=gamma proteobacterium HdN1|gene=intI|host=idbi2676
+>gnl|accession=NC_014506|name=Sulfurimonas autotrophica DSM 16294|gene=intI|host=idbi2677
+>gnl|accession=PAU59183|name=Pseudomonas aeruginosa|gene=intI1|host=idbi935
+>gnl|accession=PSEAAC3IB|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1503
+>gnl|accession=PSEAAC6IB|name=Pseudomonas fluorescens|gene=intI1|host=idbi1507
+>gnl|accession=PSEAADA|name=Pseudomonas aeruginosa|gene=intI1|host=idbi554
+>gnl|accession=PSTRTETC2|name=Pseudomonas sp. R9|gene=intI1|host=idbi1308
+>gnl|accession=TRNINTPG|name=Escherichia coli|gene=intI2|host=idbi1505
+>gnl|accession=TRNTN21CAS|name=Shigella sonnei|gene=intI1|host=idbi1509
+>gnl|accession=X12868|name=Plasmid pLMO20|gene=intI1|host=idbi1521
+>gnl|accession=X17477|name=Plasmid pLMO150|gene=intI1|host=idbi1522
+>gnl|accession=X17478|name=Plasmid pLMO229|gene=intI1|host=idbi1523
+>gnl|accession=X51546|name=Escherichia coli|gene=intI2|host=idbi1542
+>gnl|accession=X53635|name=Mycobacterium fortuitum|gene=intI1|host=idbi1543
+>gnl|accession=X98393|name=Pseudomonas aeruginosa|gene=intI1|host=idbi1571
+>gnl|accession=Y11946|name=Enterobacter cloacae|gene=intI1|host=idbi1566
+>gnl|accession=Y17696|name=Escherichia coli|gene=intI1|host=idbi1574
+>gnl|accession=Z21672|name=Escherichia coli|gene=intI1|host=idbi749
+>gnl|accession=Z54241|name=Citrobacter freundii|gene=intI1|host=idbi473
+>gnl|accession=Z83311|name=Escherichia coli|gene=intI1|host=idbi747
