@@ -11,7 +11,7 @@ The repository has two versions of the pipeline:
 
 1. **ARG identification**: align reads to CARD with LAST.
 2. **Flanking-region extraction**: cut each ARG-carrying read into its non-ARG fragments (before, between and after the ARG hits). Fragments shorter than 50 bp are dropped.
-3. **MGE alignment**: align those fragments to ISFinder, Tn3, Tn7, Tn554 and the integron database. Hits are lifted back to read coordinates and classified as before, between or after the ARG.
+3. **MGE alignment**: align those fragments to ISFinder, Tn3, Tn7, Tn554 and the integron database.
 4. **Plasmid classification**: align the full ARG-carrying reads to the plasmid database.
 5. **Taxonomy analysis**: classify the full ARG-carrying reads with Kraken2 (+ Bracken).
 
