@@ -18,27 +18,7 @@ def load_fasta_into_memory(fasta_file):
 
 
 def has_non_arg_regions(row):
-    
-    arg_coords = sorted(row["arg_coords"], key=lambda x: x[0])
-    query_length = int(row["query_length"])
-    
-    # Before first ARG
-    if arg_coords[0][0] > 0:
-        return True
-    
-    # Between ARGs
-    starts = np.array([coord[1] for coord in arg_coords[:-1]], dtype=np.int32)
-    ends = np.array([coord[0] for coord in arg_coords[1:]], dtype=np.int32)
-    gaps = ends - starts
-    
-    if np.any(gaps > 0):
-        return True
-    
-    # After last ARG
-    if arg_coords[-1][1] < query_length:
-        return True
-    
-    return False
+    return len(extract_regions(row["arg_coords"], int(row["query_length"]))) > 0
 
 
 def prefilter_arg_summary(df):
@@ -52,31 +32,21 @@ def prefilter_arg_summary(df):
 
 
 def extract_regions(arg_coords, query_length):
-    
-    arg_coords = sorted(arg_coords, key=lambda x: x[0])
+    # Non-ARG regions of a read as (start, end), 0-based and inclusive like the ARG coordinates,
+    # so a region never shares a base with an ARG:
+    #   before the first ARG [0, start - 1], between ARGs [end + 1, next start - 1],
+    #   after the last ARG [end + 1, query_length - 1]
     regions = []
-    
-    starts = np.array([coord[0] for coord in arg_coords], dtype=np.int32)
-    ends = np.array([coord[1] for coord in arg_coords], dtype=np.int32)
-    
-    if starts[0] > 0:
-        regions.append((0, int(starts[0])))
-    
-    gaps_start = ends[:-1] + 1 # End of current ARG
-    gaps_end = starts[1:]   # Start of next ARG
-    gap_sizes = gaps_end - gaps_start  
-    
-    # Find indices where gaps exist
-    gap_mask = gap_sizes > 0
-    gap_indices = np.where(gap_mask)[0]
-    
-    for idx in gap_indices:
-        regions.append((int(gaps_start[idx]), int(gaps_end[idx])))
-    
-    # After last ARG
-    if ends[-1] < query_length:
-        regions.append((int(ends[-1]), query_length))
-    
+    pos = 0  # first base not covered by any ARG so far
+    for start, end in sorted(arg_coords, key=lambda x: x[0]):
+        start, end = int(start), int(end)
+        if start > pos:
+            regions.append((pos, start - 1))
+        pos = max(pos, end + 1)  # max() keeps a nested ARG from reopening a covered stretch
+
+    if pos <= query_length - 1:
+        regions.append((pos, query_length - 1))
+
     return regions
 
 

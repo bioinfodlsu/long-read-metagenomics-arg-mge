@@ -1,0 +1,388 @@
+# Modular ARG/MGE pipeline: ARG identification -> flanking-region extraction ->
+# MGE alignment -> plasmid classification -> taxonomy, one annotation file per sample.
+#
+# Needed inputs:
+#   samples/<name>.fastq or samples/<name>.fasta   one file per sample
+#   metadata/avg_read_length.csv                     one row per sample
+#   database/kraken2/gtdb_kraken2/                   Kraken2 database
+#   database/*.fasta, metadata/*                     already in the repo
+#
+# Run from the repository root:
+#   snakemake -s modular/workflow/Snakefile --use-conda --conda-frontend conda --cores all
+#   -> results_v1/final_summary/<sample>_final_summary.csv
+#
+# To run only the ARG step (ARG summary + extracted flanking regions):
+#   snakemake -s modular/workflow/Snakefile --use-conda --conda-frontend conda --cores all arg_only
+#   -> results_v1/arg_summary/<sample>_CARD_summary.csv
+#      results_v1/arg_extracted/<sample>_CARD_last.fasta
+#
+# To run only one analysis on the whole reads (no ARG step), add its name:
+#   snakemake -s modular/workflow/Snakefile --use-conda --conda-frontend conda --cores all mge_only
+#   snakemake -s modular/workflow/Snakefile --use-conda --conda-frontend conda --cores all plasmid_only
+#   snakemake -s modular/workflow/Snakefile --use-conda --conda-frontend conda --cores all taxonomy_only
+#   -> results_v1/{mge,plasmid,taxonomy}_summary/reads/<sample>_*_summary.csv
+
+import pandas as pd
+
+
+OUT = "results_v1"
+KRAKEN_DB = "database/kraken2/gtdb_kraken2"
+
+MGE_DBS = ["IS", "Tn3", "Tn7", "Tn554", "integron"]
+DB_FASTA = {
+    "CARD": "database/card_protein_homolog_model.fasta",
+    "IS": "database/ISFinder.fasta",
+    "Tn3": "database/Tn3.fasta",
+    "Tn7": "database/Tn7.fasta",
+    "Tn554": "database/Tn554.fasta",
+    "integron": "database/integron.fasta",
+}
+
+(FASTQ_SAMPLES,) = glob_wildcards("samples/{sample}.fastq")
+(FASTA_SAMPLES,) = glob_wildcards("samples/{sample}.fasta")
+ALL_SAMPLES = sorted(set(FASTQ_SAMPLES + FASTA_SAMPLES))
+
+avg_lengths = pd.read_csv("metadata/avg_read_length.csv", index_col=0).squeeze("columns")
+
+CORES = workflow.cores if workflow.cores else 1
+THREADS_10 = max(1, int(CORES * 0.1))
+THREADS_20 = max(1, int(CORES * 0.2))
+THREADS_50 = max(1, int(CORES * 0.5))
+THREADS_80 = max(1, int(CORES * 0.8))
+THREADS_100 = max(1, CORES)
+
+wildcard_constraints:
+    sample = "[^/]+",
+    qset = "reads|fragments|arg_reads",
+    db = "|".join(MGE_DBS),
+    avg_len = r"\d+",
+
+
+def sample_fasta(sample):
+    if sample in FASTA_SAMPLES:
+        return f"samples/{sample}.fasta"
+    return f"{OUT}/converted/{sample}.fasta"
+
+
+def query_fasta(wc):
+    """The sequences an alignment runs on: whole reads, ARG fragments, or ARG-carrying reads."""
+    if wc.qset == "reads":
+        return sample_fasta(wc.sample)
+    if wc.qset == "fragments":
+        return f"{OUT}/arg_extracted/{wc.sample}_CARD_last.fasta"
+    return f"{OUT}/arg_reads/{wc.sample}_arg_reads.fasta"
+
+
+def read_length(sample):
+    if sample not in avg_lengths.index:
+        raise ValueError(f"{sample} has no average read length in metadata/avg_read_length.csv; "
+                         f"Bracken needs one")
+    return int(avg_lengths[sample])
+
+
+
+rule all:
+    input:
+        expand(f"{OUT}/final_summary/{{sample}}_final_summary.csv", sample=ALL_SAMPLES),
+        expand(f"{OUT}/kraken/arg_reads/{{sample}}_genus.bracken", sample=ALL_SAMPLES),
+
+rule arg_only:
+    input:
+        expand(f"{OUT}/arg_summary/{{sample}}_CARD_summary.csv", sample=ALL_SAMPLES),
+        expand(f"{OUT}/arg_extracted/{{sample}}_CARD_last.fasta", sample=ALL_SAMPLES),
+
+rule mge_only:
+    input:
+        expand(f"{OUT}/mge_summary/reads/{{sample}}_mge_summary.csv", sample=ALL_SAMPLES),
+
+rule plasmid_only:
+    input:
+        expand(f"{OUT}/plasmid_summary/reads/{{sample}}_plasmid_summary.csv", sample=ALL_SAMPLES),
+
+rule taxonomy_only:
+    input:
+        expand(f"{OUT}/taxonomy_summary/reads/{{sample}}_taxonomy_summary.csv", sample=ALL_SAMPLES),
+        expand(f"{OUT}/kraken/reads/{{sample}}_genus.bracken", sample=ALL_SAMPLES),
+
+
+
+
+rule fastq_to_fasta:
+    input: "samples/{sample}.fastq"
+    output: OUT + "/converted/{sample}.fasta"
+    conda: "envs/seqtk.yaml"
+    threads: THREADS_10
+    shell: "seqtk seq -a {input} > {output}"
+
+rule build_protein_db:
+    input: lambda wc: DB_FASTA[wc.name]
+    output: "database/last/db/{name}-db.prj"
+    wildcard_constraints:
+        name = "|".join(DB_FASTA)
+    conda: "envs/LAST.yaml"
+    threads: THREADS_50
+    shell: "lastdb -q -c database/last/db/{wildcards.name}-db {input}"
+
+rule build_plasmid_db:
+    input: "database/plasmid.fasta"
+    conda: "envs/LAST.yaml"
+    output: "database/last/db/plasmid-db.prj"
+    threads: THREADS_50
+    shell: "lastdb -c database/last/db/plasmid-db {input}"
+
+
+rule train_arg:
+    input:
+        reads = lambda wc: sample_fasta(wc.sample),
+        db = "database/last/db/CARD-db.prj",
+    output: OUT + "/last/train/reads/{sample}_CARD.train"
+    log: OUT + "/logs/train_arg/{sample}.log"
+    conda: "envs/LAST.yaml"
+    threads: THREADS_50
+    shell: "last-train -P{threads} --codon database/last/db/CARD-db {input.reads} > {output} 2> {log}"
+
+rule align_arg:
+    input:
+        reads = lambda wc: sample_fasta(wc.sample),
+        train = OUT + "/last/train/reads/{sample}_CARD.train",
+    output: OUT + "/maf/reads/{sample}_CARD.maf"
+    log: OUT + "/logs/align_arg/{sample}.log"
+    conda: "envs/LAST.yaml"
+    threads: THREADS_100
+    shell: "lastal -p {input.train} -m10 -D1e6 -K1 -P{threads} database/last/db/CARD-db {input.reads} > {output} 2> {log}"
+
+rule process_arg:
+    input:
+        reads = lambda wc: sample_fasta(wc.sample),
+        alignment = OUT + "/maf/reads/{sample}_CARD.maf",
+        metadata = ancient("metadata/aro_index.tsv"),
+    output:
+        summary = OUT + "/arg_summary/{sample}_CARD_summary.csv",
+        fragments = OUT + "/arg_extracted/{sample}_CARD_last.fasta",
+    log: OUT + "/logs/process_arg/{sample}.log"
+    conda: "envs/process.yaml"
+    threads: 1
+    resources:
+        mem_mb = 60000
+    shell:
+        "python modular/scripts/arg_analysis.py --input {input.reads} --maf {input.alignment} "
+        "--metadata {input.metadata} --summary {output.summary} --output {output.fragments} > {log} 2>&1"
+
+# "{read}_partN start:end" per fragment; mge_analysis lifts hits back onto the read with it.
+rule extract_arg_headers:
+    input: OUT + "/arg_extracted/{sample}_CARD_last.fasta"
+    output: OUT + "/arg_headers/{sample}_ARG.txt"
+    threads: 1
+    shell: "grep '^>' {input} | sed 's/^>//' > {output} || true"
+
+
+
+rule train_mge:
+    input:
+        query = query_fasta,
+        db = "database/last/db/{db}-db.prj",
+    output: OUT + "/last/train/{qset}/{sample}_{db}.train"
+    log: OUT + "/logs/train_mge/{qset}/{sample}_{db}.log"
+    conda: "envs/LAST.yaml"
+    threads: THREADS_20
+    shell:
+        """
+        if [ ! -s {input.query} ]; then
+            echo "empty query, nothing to train on" > {log}
+            : > {output}
+        elif ! last-train -P{threads} --codon database/last/db/{wildcards.db}-db {input.query} > {output} 2> {log}; then
+            echo "WARNING: last-train failed; {wildcards.db} gets no alignments for this sample" >> {log}
+            : > {output}
+        fi
+        """
+
+rule align_mge:
+    input:
+        query = query_fasta,
+        train = OUT + "/last/train/{qset}/{sample}_{db}.train",
+    output: OUT + "/maf/{qset}/{sample}_{db}.maf"
+    log: OUT + "/logs/align_mge/{qset}/{sample}_{db}.log"
+    conda: "envs/LAST.yaml"
+    threads: THREADS_20
+    shell:
+        """
+        if [ -s {input.train} ]; then
+            lastal -p {input.train} -m10 -D1e6 -K1 -P{threads} database/last/db/{wildcards.db}-db {input.query} > {output} 2> {log}
+        else
+            echo "no training parameters, writing an empty alignment" > {log}
+            : > {output}
+        fi
+        """
+
+rule process_mge:
+    input:
+        **{f"{db.lower()}_maf": OUT + f"/maf/fragments/{{sample}}_{db}.maf" for db in MGE_DBS},
+        offsets = OUT + "/arg_headers/{sample}_ARG.txt",
+        arg_summary = OUT + "/arg_summary/{sample}_CARD_summary.csv",
+        is_metadata = ancient("metadata/ISFinder_metadata.txt"),
+        integrase_headers = ancient("metadata/integrase_headers.txt"),
+    output:
+        mge = OUT + "/mge_summary/fragments/{sample}_mge_summary.csv",
+        is_summary = OUT + "/is_summary/{sample}_IS_summary.csv",
+        arg_is = OUT + "/arg_is_merged/{sample}_ARG_IS_summary.csv",
+        merged = OUT + "/all_summary/{sample}_all_summary.csv",
+    log: OUT + "/logs/process_mge/{sample}.log"
+    conda: "envs/process.yaml"
+    threads: 1
+    shell:
+        "python modular/scripts/mge_analysis.py "
+        "--is-maf {input.is_maf} --tn3-maf {input.tn3_maf} --tn7-maf {input.tn7_maf} "
+        "--tn554-maf {input.tn554_maf} --integron-maf {input.integron_maf} "
+        "--is-metadata {input.is_metadata} --integrase-headers {input.integrase_headers} "
+        "--coord-offsets {input.offsets} --arg-summary {input.arg_summary} "
+        "--output {output.mge} --is-summary {output.is_summary} "
+        "--arg-is-output {output.arg_is} --merged-output {output.merged} > {log} 2>&1"
+
+rule process_mge_reads:
+    input:
+        **{f"{db.lower()}_maf": OUT + f"/maf/reads/{{sample}}_{db}.maf" for db in MGE_DBS},
+        is_metadata = ancient("metadata/ISFinder_metadata.txt"),
+        integrase_headers = ancient("metadata/integrase_headers.txt"),
+    output: OUT + "/mge_summary/reads/{sample}_mge_summary.csv"
+    log: OUT + "/logs/process_mge_reads/{sample}.log"
+    conda: "envs/process.yaml"
+    threads: 1
+    shell:
+        "python modular/scripts/mge_analysis.py "
+        "--is-maf {input.is_maf} --tn3-maf {input.tn3_maf} --tn7-maf {input.tn7_maf} "
+        "--tn554-maf {input.tn554_maf} --integron-maf {input.integron_maf} "
+        "--is-metadata {input.is_metadata} --integrase-headers {input.integrase_headers} "
+        "--output {output} > {log} 2>&1"
+
+
+
+rule extract_arg_reads:
+    input:
+        reads = lambda wc: sample_fasta(wc.sample),
+        summary = OUT + "/arg_summary/{sample}_CARD_summary.csv",
+    output:
+        ids = OUT + "/arg_reads/{sample}_ids.txt",
+        reads = OUT + "/arg_reads/{sample}_arg_reads.fasta",
+    log: OUT + "/logs/extract_arg_reads/{sample}.log"
+    conda: "envs/seqkit.yaml"
+    threads: THREADS_10
+    shell:
+        """
+        awk -F, 'NR > 1 {{print $1}}' {input.summary} | sort -u > {output.ids}
+        if [ -s {output.ids} ]; then
+            seqkit grep -j {threads} -f {output.ids} {input.reads} > {output.reads} 2> {log}
+        else
+            : > {output.reads}
+        fi
+        """
+
+rule align_plasmid:
+    input:
+        query = query_fasta,
+        db = "database/last/db/plasmid-db.prj",
+    output: OUT + "/maf/{qset}/{sample}_plasmid.maf"
+    log: OUT + "/logs/align_plasmid/{qset}/{sample}.log"
+    conda: "envs/LAST.yaml"
+    threads: THREADS_100
+    shell:
+        """
+        if [ -s {input.query} ]; then
+            lastal -m10 -D1e6 -K1 -P{threads} database/last/db/plasmid-db {input.query} > {output} 2> {log}
+        else
+            : > {output}
+        fi
+        """
+
+rule process_plasmid:
+    input:
+        alignment = OUT + "/maf/{qset}/{sample}_plasmid.maf",
+        typing = ancient("metadata/typing.csv"),
+        finder = ancient("metadata/plasmidfinder.csv"),
+    output: OUT + "/plasmid_summary/{qset}/{sample}_plasmid_summary.csv"
+    log: OUT + "/logs/process_plasmid/{qset}/{sample}.log"
+    conda: "envs/process.yaml"
+    threads: 1
+    shell:
+        "python modular/scripts/plasmid_analysis.py --plasmid {input.alignment} "
+        "--typing {input.typing} --finder {input.finder} --output {output} > {log} 2>&1"
+
+
+
+
+rule classify_kraken:
+    input:
+        query = query_fasta,
+        db = ancient(KRAKEN_DB),
+    output:
+        tab = OUT + "/kraken/{qset}/{sample}_taxonomy.tab",
+        report = OUT + "/kraken/{qset}/{sample}_taxonomy.txt",
+    log: OUT + "/logs/kraken/{qset}/{sample}.log"
+    conda: "envs/kraken2.yaml"
+    threads: THREADS_100
+    shell:
+        """
+        if [ -s {input.query} ]; then
+            k2 classify --use-names --memory-mapping --threads {threads} --db {input.db} {input.query} \
+                --output {output.tab} --report {output.report} > {log} 2>&1
+        else
+            : > {output.tab}
+            : > {output.report}
+        fi
+        """
+
+rule process_taxonomy:
+    input:
+        report = OUT + "/kraken/{qset}/{sample}_taxonomy.txt",
+        reads = OUT + "/kraken/{qset}/{sample}_taxonomy.tab",
+    output: OUT + "/taxonomy_summary/{qset}/{sample}_taxonomy_summary.csv"
+    log: OUT + "/logs/process_taxonomy/{qset}/{sample}.log"
+    conda: "envs/process.yaml"
+    threads: 1
+    shell:
+        "python modular/scripts/taxonomy_analysis.py --tax-report {input.report} --tax-reads {input.reads} --output {output} > {log} 2>&1"
+
+rule build_bracken_db:
+    input: ancient(KRAKEN_DB)
+    output: KRAKEN_DB + "/database{avg_len}mers.kmer_distrib"
+    params:
+        kmer = 26,
+    log: OUT + "/logs/bracken_build/{avg_len}.log"
+    conda: "envs/bracken.yaml"
+    threads: THREADS_100
+    shell: "bracken-build -d {input} -k {params.kmer} -t {threads} -l {wildcards.avg_len} > {log} 2>&1"
+
+# Sample-level abundance estimates; not part of the per-read summary.
+rule bracken_genus:
+    input:
+        report = OUT + "/kraken/{qset}/{sample}_taxonomy.txt",
+        distrib = lambda wc: f"{KRAKEN_DB}/database{read_length(wc.sample)}mers.kmer_distrib",
+        db = ancient(KRAKEN_DB),
+    output: OUT + "/kraken/{qset}/{sample}_genus.bracken"
+    params:
+        read_length = lambda wc: read_length(wc.sample),
+    log: OUT + "/logs/bracken_genus/{qset}/{sample}.log"
+    conda: "envs/bracken.yaml"
+    threads: 1
+    shell:
+        """
+        if [ -s {input.report} ]; then
+            bracken -d {input.db} -i {input.report} -o {output} -r {params.read_length} -l G > {log} 2>&1 \
+                || {{ echo "WARNING: bracken failed (too few classified reads?)" >> {log}; : > {output}; }}
+        else
+            : > {output}
+        fi
+        """
+
+
+
+rule final_summary:
+    input:
+        base = OUT + "/all_summary/{sample}_all_summary.csv",
+        plasmid = OUT + "/plasmid_summary/arg_reads/{sample}_plasmid_summary.csv",
+        taxonomy = OUT + "/taxonomy_summary/arg_reads/{sample}_taxonomy_summary.csv",
+    output: OUT + "/final_summary/{sample}_final_summary.csv"
+    log: OUT + "/logs/final_summary/{sample}.log"
+    conda: "envs/process.yaml"
+    threads: 1
+    shell:
+        "python modular/scripts/merge_summaries.py --base {input.base} --join {input.plasmid} --join {input.taxonomy} --output {output} > {log} 2>&1"

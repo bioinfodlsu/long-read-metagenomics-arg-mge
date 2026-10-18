@@ -45,7 +45,6 @@ rule all:
         expand("results/kraken/{sample}_taxonomy.txt", sample=ALL_SAMPLES),
         expand("database/kraken2/gtdb_kraken2/database{avg_len}mers.kmer_distrib", avg_len=UNIQUE_LENGTHS),
         expand("results/kraken/{sample}_genus.bracken", sample=ALL_SAMPLES),
-        expand("results/kraken/{sample}_phylum.bracken", sample=ALL_SAMPLES),
         expand("results/is_summary/{sample}_IS_summary.csv", sample=ALL_SAMPLES),
         expand("results/arg_is_merged/{sample}_ARG_IS_summary.csv", sample=ALL_SAMPLES),
         expand("results/all_summary/{sample}_all_summary.csv", sample=ALL_SAMPLES),
@@ -109,7 +108,7 @@ rule build_plasmid_db:
     conda: "envs/LAST.yaml"
     output: "database/last/db/plasmid-db.prj"
     threads: THREADS_50
-    shell: "lastdb -q -c database/last/db/plasmid-db {input}"
+    shell: "lastdb -c database/last/db/plasmid-db {input}"
 
 # TRAIN STEP FOR ARG
 rule train_arg:
@@ -131,7 +130,7 @@ rule align_arg:
     log: "logs/align_arg/{sample}.log"
     params:
         db = "database/last/db/CARD-db"
-    threads: THREADS_50
+    threads: THREADS_100
     output: "results/maf/{sample}_CARD.maf"
     shell: "lastal -p {input.train} -m10 -D1e6 -K1 -P{threads} {params.db} {input.samples} > {output} 2> {log}"
 
@@ -141,12 +140,14 @@ rule process_arg:
         alignment = "results/maf/{sample}_CARD.maf",
         metadata = ancient("metadata/aro_index.tsv")
     conda: "envs/process.yaml"
-    threads: THREADS_50
+    threads: THREADS_100
+    resources:
+        mem_mb = 60000
     log: "logs/arg_processing/{sample}.log"
     output: 
         summary = "results/arg_summary/{sample}_CARD_summary.csv",
         extracted = "results/arg_extracted/{sample}_CARD_last.fasta"
-    shell: "python scripts/ARG_parse.py --input {input.samples} --maf {input.alignment} --metadata {input.metadata} --summary {output.summary} --output {output.extracted} > {log} 2>&1" 
+    shell: "python scripts/ARG_optimized_parse.py --input {input.samples} --maf {input.alignment} --metadata {input.metadata} --summary {output.summary} --output {output.extracted} > {log} 2>&1" 
 
 # EXTRACT HEADERS FROM ARG FASTA FILE
 rule extract_arg_headers:
@@ -165,7 +166,7 @@ rule train_is:
     log: "logs/train_is/{sample}.log"
     params:
         db = "database/last/db/IS-db"
-    threads: THREADS_20
+    threads: THREADS_50
     output: "results/last/train/{sample}_IS.train"
     shell: "last-train -P{threads} --codon {params.db} {input.extracted_samples} > {output} 2> {log}"
 
@@ -398,19 +399,6 @@ rule bracken_classify_genus:
     output: "results/kraken/{sample}_genus.bracken"
     shell:
         "bracken -d {input.db} -i {input.kraken_report} -o {output} -r {params.avg_len} -l G -t {threads} > {log} 2>&1"
-rule bracken_classify_phylum:
-    input:
-        kraken_report = "results/kraken/{sample}_taxonomy.txt",
-        db = ancient("database/kraken2/gtdb_kraken2")
-    params:
-        avg_len = lambda wildcards: avg_lengths[wildcards.sample]
-    threads: THREADS_100
-    conda: "envs/bracken.yaml"
-    log: "logs/bracken_phylum/{sample}.log"
-    output: "results/kraken/{sample}_phylum.bracken"
-    shell:
-        "bracken -d {input.db} -i {input.kraken_report} -o {output} -r {params.avg_len} -l P -t {threads} > {log} 2>&1"
-
 
 # Parsing Scripts
 
@@ -423,7 +411,7 @@ rule process_is:
         arg_summary = "results/arg_summary/{sample}_CARD_summary.csv",
         fasta_headers = "results/arg_headers/{sample}_ARG.txt"
     conda: "envs/process.yaml"
-    threads: THREADS_50
+    threads: THREADS_80
     log: "logs/is_processing/{sample}.log"
     output: 
         summary = "results/is_summary/{sample}_IS_summary.csv",
@@ -441,7 +429,7 @@ rule process_tn_int:
         integrase_headers = ancient("metadata/integrase_headers.txt"),
         arg_is = "results/arg_is_merged/{sample}_ARG_IS_summary.csv",
     conda: "envs/process.yaml"
-    threads: THREADS_50
+    threads: THREADS_80
     log: "logs/tn_int_processing/{sample}.log"
     output: 
         summary = "results/all_summary/{sample}_all_summary.csv",
@@ -494,7 +482,7 @@ rule process_plasmid_taxo:
         finder = ancient("metadata/plasmidfinder.csv"),
         all_summary = "results/all_summary/{sample}_all_summary.csv",
     conda: "envs/process.yaml"
-    threads: THREADS_80
+    threads: THREADS_100
     log: "logs/plasmid_taxo_processing/{sample}.log"
     output:
         summary = "results/final_summary/{sample}_final_summary.csv"

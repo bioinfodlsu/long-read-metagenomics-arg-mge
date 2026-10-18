@@ -1,0 +1,7 @@
+name: LAST
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - last = 1650

@@ -40,41 +40,39 @@ def extract_info(target_name):
         return pd.Series([IS_name, IS_function, IS_chemistry])
 
 
-def correct_for_length(df, header_txt_path):
-    df["IS_start"] = df["start"]
-    df["IS_end"] = df["end"]
-    fasta_lengths = {}
-    
+def read_fragment_offsets(header_txt_path):
+    # {fragment name: start on the read} from the "{read}_partN start:end" headers ARG_parse.py writes.
+    # Lines may come with or without the leading '>' (the Snakefile strips it).
+    offsets = {}
     with open(header_txt_path, 'r') as header_file:
         for line in header_file:
-            line = line.strip()
-            if not line or not line.startswith('>'):
+            header_parts = line.strip().lstrip('>').split()
+            if len(header_parts) < 2:
                 continue
-            
-            # Remove the '>' character
-            header = line[1:]
-            header_parts = header.split()
-            
-            if not header_parts:
+            coords = header_parts[1].split(":")
+            if len(coords) != 2:
                 continue
-                
-            query_name = header_parts[0]
-            coords = header_parts[1].split(":") if len(header_parts) > 1 else None
-            
-            if coords and len(coords) == 2:
-                try:
-                    start, end = map(int, coords)
-                    fasta_lengths[query_name] = (start, end)
-                except ValueError:
-                    continue
-    
-    for index, row in df.iterrows():
-        query_name = row['query_name']
-        if query_name in fasta_lengths:
-            start, end = fasta_lengths[query_name]
-            df.at[index, "IS_start"] = row["start"] + start
-            df.at[index, "IS_end"] = row["end"] + start
-    
+            try:
+                offsets[header_parts[0]] = int(coords[0])
+            except ValueError:
+                continue
+    return offsets
+
+
+def correct_for_length(df, header_txt_path):
+    # Fragment coordinates -> read coordinates: a hit at fragment position k sits at read base start + k.
+    # Every fragment must have an offset; a missing one would leave its hits in fragment coordinates.
+    offsets = read_fragment_offsets(header_txt_path)
+    missing = sorted(set(df["query_name"]) - set(offsets))
+    if missing:
+        raise ValueError(
+            f"{len(missing)} of {df['query_name'].nunique()} aligned fragments have no 'start:end' offset in "
+            f"{header_txt_path} (e.g. {missing[:3]}); check that it lists the headers of the fragment FASTA "
+            f"written by ARG_parse.py for this sample"
+        )
+    offset = df["query_name"].map(offsets)
+    df["IS_start"] = df["start"] + offset
+    df["IS_end"] = df["end"] + offset
     return df
 
 def parse_lastal(input_file, fasta_path):
