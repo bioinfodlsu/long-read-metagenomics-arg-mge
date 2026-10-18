@@ -115,11 +115,10 @@ The main pipeline currently runs steps 1–3. Its final output is `results/all_s
 
 The modular pipeline in [modular/](modular) splits the analysis into independent modules. Each module is a script that takes its own inputs and writes one CSV keyed on `query_name`. A merge script joins them. This means you can:
 
-- run the whole chain, ARG → MGE → plasmid → taxonomy, in one command;
+- run the whole pipeline, ARG → MGE → plasmid → taxonomy, in one command;
 - run a single analysis (for example MGE or taxonomy) on all the reads of a sample, without the ARG step;
-- run any module by hand on your own LAST or Kraken2 output.
 
-### 4.1. Layout
+### 4.1. File Structure
 
 ```
 modular/
