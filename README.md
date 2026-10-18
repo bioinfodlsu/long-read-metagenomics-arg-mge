@@ -4,8 +4,8 @@ This guide explains how to run the analysis pipeline, which is written in Snakem
 
 The repository has two versions of the pipeline:
 
-- **Main pipeline** ([workflow/Snakefile](workflow/Snakefile), [scripts/](scripts)): the original end-to-end workflow. Outputs go to `results/`.
-- **Modular pipeline** ([modular/](modular)): a self-contained version where each analysis is its own script and can run alone. Outputs go to `results_v1/`. See [Section 4](#4-modular-pipeline).
+- **Main pipeline** ([workflow/Snakefile](workflow/Snakefile), [scripts/](scripts)): the end-to-end workflow. Outputs go to `results/`.
+- **Modular pipeline** ([modular/](modular)): ARG, MGE, plasmid, taxonomy analysis step can be ran separately. Outputs go to `results_v1/`. See [Section 4](#4-modular-pipeline).
 
 ## Pipeline overview
 
