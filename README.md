@@ -19,7 +19,6 @@ Each sample produces one annotation table, keyed on the read ID (`query_name`). 
 
 ## 1. Installation
 
-This pipeline requires the package manager **Conda** and the workflow management system **Snakemake**.
 Additional dependencies not handled by Snakemake are described in Section 1.4.
 
 ### 1.1. Install Miniconda
