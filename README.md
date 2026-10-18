@@ -1,6 +1,6 @@
 # Expanding the Repertoire of Associations Between Antibiotic Resistance Genes and Putative Mobile Genetic Element Carriers Using Metagenomic Long Reads
 
-This guide explains how to run the analysis pipeline, which is written in Snakemake. The pipeline finds antibiotic resistance genes (ARGs) in long-read metagenomic reads. It then annotates the reads that carry them with their mobile genetic elements (MGEs), plasmid context and taxonomy.
+This guide explains how to run the analysis pipeline, which is written in Snakemake. The pipeline finds antibiotic resistance genes (ARGs) in long-read metagenomic reads. It then annotates the reads with nearby mobile genetic elements (MGEs), plasmid context and taxonomy.
 
 The repository has two versions of the pipeline:
 
