@@ -325,7 +325,9 @@ def read_arg_is_csv(arg_csv_path):
     df_arg_is['arg_coords'] = df_arg_is['arg_coords'].apply(parse_column)
     
     for col in ['arg_accessions', 'arg_evalues', 'arg_genes', 'arg_class', 'arg_mechanism', 'arg_reference_coverage', 'IS_coords', 'IS_accessions', 'IS_evalues', 'IS_family', 'IS_names', 'IS_reference_coverages',
-                'Before_ARG', 'After_ARG', 'Between_ARG', 'before_IS_fam', 'after_IS_fam', 'between_IS_fam', 'before_IS_name', 'after_IS_name', 'between_IS_name']:
+                # IS_parse.py no longer writes the IS position columns
+                # 'Before_ARG', 'After_ARG', 'Between_ARG', 'before_IS_fam', 'after_IS_fam', 'between_IS_fam', 'before_IS_name', 'after_IS_name', 'between_IS_name',
+                ]:
         if col in df_arg_is.columns:
             df_arg_is[col] = df_arg_is[col].apply(parse_column)
     

@@ -371,9 +371,13 @@ def merge_IS_ARG_with_position(df_arg, df_IS):
         right_on='read',
         how='left'
     )
-    categorized = merged_df.apply(categorize_all_IS, axis=1)
-    final_df = pd.concat([merged_df, categorized], axis=1)
-    
+    # Before/Between/After columns are no longer written to the output. Composite transposons
+    # (label_composite_transposon, add_bounding_IS_columns) are not called by main() either; they are
+    # computed in analysis_visualizations.ipynb after filtering. The functions below are kept for reference.
+    # categorized = merged_df.apply(categorize_all_IS, axis=1)
+    # final_df = pd.concat([merged_df, categorized], axis=1)
+    final_df = merged_df
+
     if 'read' in final_df.columns and 'read' not in df_arg.columns:
         final_df = final_df.drop(columns=['read'])
     return final_df
@@ -384,9 +388,13 @@ def merge_IS_ARG_with_position(df_arg, df_IS):
 #3. If there is at least one of the above conditions met, label as composite transposon
 
 def label_composite_transposon(row):
-    before_fams = row['before_IS_fam']
-    between_fams = row['in_between_IS_fam']
-    after_fams = row['after_IS_fam']
+    # before_fams = row['before_IS_fam']
+    # between_fams = row['in_between_IS_fam']
+    # after_fams = row['after_IS_fam']
+    positions = categorize_all_IS(row)
+    before_fams = positions['before_IS_fam']
+    between_fams = positions['in_between_IS_fam']
+    after_fams = positions['after_IS_fam']
     
     if before_fams:
         if not between_fams and not after_fams:
@@ -408,9 +416,13 @@ def to_int_tuple(c):
 def _find_bounding_IS(row):
 
     arg_coords     = parse_column(row["arg_coords"])
-    before_coords  = parse_column(row["Before_ARG"])
-    between_coords = parse_column(row["Between_ARG"])
-    after_coords   = parse_column(row["After_ARG"])
+    # before_coords  = parse_column(row["Before_ARG"])
+    # between_coords = parse_column(row["Between_ARG"])
+    # after_coords   = parse_column(row["After_ARG"])
+    positions      = categorize_all_IS(row)
+    before_coords  = positions["Before_ARG"]
+    between_coords = positions["Between_ARG"]
+    after_coords   = positions["After_ARG"]
 
     is_coords  = parse_column(row["IS_coords"])
     is_family  = parse_column(row["IS_family"])
@@ -651,8 +663,10 @@ def main():
         else:
             print("No duplicated query names found in merged dataframe.")
         # df_merged.drop_duplicates(subset=["query_name"], inplace=True)
-        df_merged['composite_transposon'] = df_merged.apply(label_composite_transposon, axis=1) 
-        df_merged = add_bounding_IS_columns(df_merged)
+        # Composite transposons are labelled in analysis_visualizations.ipynb after the ARG/MGE
+        # coverage and e-value filters, so they are not computed here.
+        # df_merged['composite_transposon'] = df_merged.apply(label_composite_transposon, axis=1)
+        # df_merged = add_bounding_IS_columns(df_merged)
         df_merged.to_csv(args.merged_output, index=False)
 
 

@@ -5,7 +5,7 @@ Covers insertion sequences, the Tn3/Tn7/Tn554 transposon families, and integrons
 * --coord-offsets lifts hit coordinates from ARG-derived read fragments
   back into whole-read space. Required whenever the alignments were run on
   those fragments; every fragment must then have an offset.
-* --arg-summary classifies each IS as before/between/after the ARGs on its read, labels composite transposons, and joins the transposon/integron columns on: --arg-is-output is the arg_is_merged table and
+* --arg-summary joins the IS columns onto the ARG summary (composite transposons are labelled in the analysis notebook after filtering), and joins the transposon/integron columns on: --arg-is-output is the arg_is_merged table and
   --merged-output the all_summary table.
 """
 import argparse
@@ -335,13 +335,17 @@ def merge_is_arg_with_position(df_arg, df_is):
     if "read" not in df_arg.columns:
         merged = merged.drop(columns=["read"])
 
-    if merged.empty:
-        # apply() on an empty frame returns a frame, not one Series per row.
-        for col in POSITION_COLUMNS:
-            merged[col] = pd.Series(dtype="object")
-        return merged
-
-    return pd.concat([merged, merged.apply(categorize_all_is, axis=1)], axis=1)
+    # The POSITION_COLUMNS are no longer written to the output. Composite transposons
+    # (label_composite_transposon, add_bounding_is_columns) are not called by annotate_arg_is either;
+    # they are computed in analysis_visualizations.ipynb after filtering. The functions are kept for reference.
+    # if merged.empty:
+    #     # apply() on an empty frame returns a frame, not one Series per row.
+    #     for col in POSITION_COLUMNS:
+    #         merged[col] = pd.Series(dtype="object")
+    #     return merged
+    #
+    # return pd.concat([merged, merged.apply(categorize_all_is, axis=1)], axis=1)
+    return merged
 
 
 def known_families(values):
@@ -358,9 +362,13 @@ def known_families(values):
 
 def label_composite_transposon(row):
     """Flag reads where same-family IS elements flank the ARG region."""
-    before_fams = known_families(row["before_IS_fam"])
-    between_fams = known_families(row["in_between_IS_fam"])
-    after_fams = known_families(row["after_IS_fam"])
+    # before_fams = known_families(row["before_IS_fam"])
+    # between_fams = known_families(row["in_between_IS_fam"])
+    # after_fams = known_families(row["after_IS_fam"])
+    positions = categorize_all_is(row)
+    before_fams = known_families(positions["before_IS_fam"])
+    between_fams = known_families(positions["in_between_IS_fam"])
+    after_fams = known_families(positions["after_IS_fam"])
 
     if not before_fams:
         return "no_composite"
@@ -384,9 +392,13 @@ def _to_int_tuple(c):
 def _find_bounding_is(row):
     """Resolve the outermost same-family IS pair bounding each ARG group."""
     arg_coords = parse_list_column(row["arg_coords"])
-    before_coords = parse_list_column(row["Before_ARG"])
-    between_coords = parse_list_column(row["Between_ARG"])
-    after_coords = parse_list_column(row["After_ARG"])
+    # before_coords = parse_list_column(row["Before_ARG"])
+    # between_coords = parse_list_column(row["Between_ARG"])
+    # after_coords = parse_list_column(row["After_ARG"])
+    positions = categorize_all_is(row)
+    before_coords = parse_list_column(positions["Before_ARG"])
+    between_coords = parse_list_column(positions["Between_ARG"])
+    after_coords = parse_list_column(positions["After_ARG"])
 
     is_coords = parse_list_column(row["IS_coords"])
     is_family = parse_list_column(row["IS_family"])
@@ -568,11 +580,14 @@ def add_bounding_is_columns(df):
 
 def annotate_arg_is(df_arg, df_is_summary):
     df = merge_is_arg_with_position(df_arg, df_is_summary)
-    if df.empty:
-        df["composite_transposon"] = pd.Series(dtype="object")
-    else:
-        df["composite_transposon"] = df.apply(label_composite_transposon, axis=1)
-    return add_bounding_is_columns(df)
+    # Composite transposons are labelled in analysis_visualizations.ipynb after the ARG/MGE
+    # coverage and e-value filters, so they are not computed here.
+    # if df.empty:
+    #     df["composite_transposon"] = pd.Series(dtype="object")
+    # else:
+    #     df["composite_transposon"] = df.apply(label_composite_transposon, axis=1)
+    # return add_bounding_is_columns(df)
+    return df
 
 
 def join_tn_summaries(df, tn_summaries):
