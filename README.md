@@ -113,7 +113,7 @@ The main pipeline currently runs steps 1–3. Its final output is `results/all_s
 
 ## 4. Modular pipeline
 
-The modular pipeline in [modular/](modular) splits the analysis into independent modules. Each module is a script that takes its own inputs and writes one CSV keyed on `query_name`. A merge script joins them. This means you can:
+The modular pipeline in [modular/](modular) splits the analysis into independent modules. Each module is a script that takes its own inputs and writes one CSV keyed on `query_name`. A merge script joins them. The following can be done:
 
 - run the whole pipeline, ARG → MGE → plasmid → taxonomy, in one command;
 - run a single analysis (for example MGE or taxonomy) on all the reads of a sample, without the ARG step;
