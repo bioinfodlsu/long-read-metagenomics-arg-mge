@@ -50,14 +50,7 @@ To test Snakemake:
 $ snakemake --help
 ```
 
-### 1.4. Install Additional Dependencies
-Install git and gawk. We require gawk to process the filtering stage of our databases.
-```
-$ mamba install git
-$ mamba install gawk
-```
-
-### 1.5. Download the pipeline
+### 1.4. Download the pipeline
 Download the online [repository](https://github.com/bioinfodlsu/long-read-metagenomics-arg-mge), or use the command line:
 ```
 $ git clone https://github.com/bioinfodlsu/long-read-metagenomics-arg-mge
