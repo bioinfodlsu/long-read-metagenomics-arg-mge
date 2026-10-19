@@ -15,8 +15,6 @@ The repository has two versions of the pipeline:
 4. **Plasmid classification**: align the full ARG-carrying reads to the plasmid database.
 5. **Taxonomy analysis**: classify the full ARG-carrying reads with Kraken2 (+ Bracken).
 
-Each sample produces one annotation table, keyed on the read ID (`query_name`). Each stage adds its own columns to it.
-
 ## 1. Installation
 
 Additional dependencies not handled by Snakemake are described in Section 1.4.
@@ -97,11 +95,6 @@ If you get errors about the conda environments, use this command instead:
 ```
 $ snakemake --use-conda --cores all --conda-frontend conda
 ```
-To check the workflow without running it (dry run):
-```
-$ snakemake -n
-```
-
 The main pipeline currently runs steps 1–3. Its final output is `results/all_summary/{sample}_all_summary.csv`. The rules for steps 4–5 (plasmid, Kraken2 and Bracken) are written but are commented out in `rule all`. To run the full chain, including plasmid and taxonomy, use the modular pipeline.
 
 | Output | Contents |
