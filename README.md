@@ -75,6 +75,12 @@ SRR28740373,3000
 SRR28740374,2894
 ```
 
+### Kraken2 database
+
+Our Kraken2 database was built from the representative genome sequences of GTDB r89. Representative bacterial genomes with < 95% completeness or > 5% contamination were left out. The database was then downsampled with `--max-db-size`, capping its size at 64 GB.
+
+**Taxonomy results depend on the Kraken2 database.** If you use a different GTDB release, a different set of genomes or a different size cap, the taxonomy columns and Bracken abundances may differ from ours.
+
 ## 3. Running the main pipeline
 
 With the snakemake conda environment activated, call the pipeline from the top-level directory:
@@ -86,13 +92,38 @@ If you get errors about the conda environments, use this command instead:
 ```
 $ snakemake --use-conda --cores all --conda-frontend conda
 ```
-The main pipeline currently runs steps 1–3. Its final output is `results/all_summary/{sample}_all_summary.csv`. The rules for steps 4–5 (plasmid, Kraken2 and Bracken) are written but are commented out in `rule all`. To run the full chain, including plasmid and taxonomy, use the modular pipeline.
+Its final output is `results/final_summary/{sample}_final_summary.csv`.
 
 | Output | Contents |
 |---|---|
 | `results/arg_summary/{sample}_CARD_summary.csv` | ARG hits, one row per ARG-carrying read |
 | `results/arg_is_merged/{sample}_ARG_IS_summary.csv` | + IS hits (composite transposons are labelled in the analysis notebook after filtering) |
 | `results/all_summary/{sample}_all_summary.csv` | + Tn3, Tn7, Tn554 and integron columns |
+| `results/final_summary/{sample}_final_summary.csv` | + plasmid and taxonomy columns |
+
+### 3.1. Test run
+
+Before running your own samples, run the small test sample in [test/](test) to check that the pipeline and databases are set up correctly. The folder contains:
+
+- `test/test.fasta`: 10 ARG-carrying long reads from SRR32852254.
+- `test/test_final_summary.csv`: tthe expected final summary for these reads. Your output should have the same reads and columns as this file, but the exact values may differ. The taxonomy columns depend on the Kraken2 database you use (see [Kraken2 database](#kraken2-database)).
+
+The test needs the same databases as a full run, including the Kraken2 database (Section 2). `metadata/avg_read_length.csv` already has a row for the sample `test`.
+
+1. Copy the test reads into `samples/`. The file name becomes the sample name, `test`:
+   ```
+   $ mkdir -p samples
+   $ cp test/test.fasta samples/test.fasta
+   ```
+2. Run the pipeline for the test sample only:
+   ```
+   $ snakemake --use-conda --cores all results/final_summary/test_final_summary.csv
+   ```
+   Naming the output file runs only the rules that the test sample needs. It skips Bracken, so it doesn't build the Bracken k-mer distributions, which are slow to build. The first run takes longer than later ones, because it also creates the conda environments and builds the LAST indexes. Once the conda environments are created, the test run takes about 5 minutes on a machine with 20 cores and 64 GB of RAM.
+3. Remove the test sample before running your own data, so that it isn't processed with them:
+   ```
+   $ rm samples/test.fasta
+   ```
 
 ## 4. Modular pipeline
 
@@ -151,3 +182,13 @@ $ snakemake -s modular/workflow/Snakefile --use-conda --conda-frontend conda --c
 
 Logs for every rule are written to `results_v1/logs/`.
 
+## 5. Downstream analysis and figures
+
+All the analyses and figures in the study can be reproduced with [analysis_visualizations.ipynb](analysis_visualizations.ipynb). The notebook takes the final summaries from the pipeline. To fully replicate the results, the annotated data from our run can be found in Zenodo  [https://doi.org/10.5281/zenodo.23492757](https://doi.org/10.5281/zenodo.23492757).
+
+For comparison, we downloaded the ProMGE and PLSDB data from their repositories and matched them with our results in the notebook:
+
+- **ProMGE**: we mapped the ARO accessions of its ARG–MGE associations to CARD gene families in the latest CARD version. We then compared them with the genus, ARG and MGE combinations found in our samples.
+- **PLSDB (v.2024 05 31 v2)**: we used only the AMR annotations made with RGI (CARD). We compared them with the ARGs on our putative plasmid reads, by gene family.
+
+To run the notebook on your own samples, provide your own sample metadata in the same format as ours. For each sample, give its accession, source, average read length and total number of bases, as well as its number of reads. The normalization and the per-source comparisons use these values. Also update the file paths in the notebook to point to your own files.
